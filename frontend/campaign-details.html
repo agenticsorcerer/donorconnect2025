@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donnor Connect</title>
+
+  <!--Essential css files-->
+  <link rel="stylesheet" href="assets/css/all.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.css" />
+  <link rel="stylesheet" href="assets/css/nice-select.css" />
+  <link rel="stylesheet" href="assets/css/fancybox.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.png" />
+</head>
+
+<body>
+
+  <!--preloader start-->
+  <div class="preloader">
+    <h1>Donor Connect</h1>
+    <div class="preload-progress">
+      <span></span>
+    </div>
+  </div>
+  <!--preloader end-->
+
+  <!-- scroll to top -->
+  <div class="progress-wrap cursor-pointer active-progress">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+        style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 221.377;">
+      </path>
+    </svg>
+  </div>
+  <!-- scroll to top -->
+
+   <!-- header placeholder -->
+  <div id="header-placeholder"></div>
+   
+  <!-- breadcrumb start -->
+  <div class="breadcrumb_section overflow-hidden ptb-150">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12 text-center">
+          <h2>Campaign</h2>
+          <ul>
+            <li><a href=" #">Home</a></li>
+            <li><a href="campaign-details.html">Campaign</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- breadcrumb end -->
+
+  <!-- Campaign Hero Section -->
+  <section class="campaign-hero-section" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #b91c3c 100%); position: relative; overflow: hidden;">
+    <!-- Background Pattern -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.3;"></div>
+    
+    <!-- Floating Elements -->
+    <div style="position: absolute; top: 10%; right: 10%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: 20%; left: 5%; width: 60px; height: 60px; background: rgba(255,255,255,0.08); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
+    
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center min-vh-75">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-5 mb-lg-0">
+          <div class="pe-lg-5">
+            <!-- Professional Badge -->
+            <div class="mb-4">
+              <span class="professional-badge" style="display: inline-block; background: rgba(255,255,255,0.15); color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fa-solid fa-heart me-2"></i>AIMS Layyah Project
+              </span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="hero-title mb-4" style="font-size: 3.5rem; font-weight: 800; color: white; line-height: 1.1; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+              Blood Donation 
+              <span class="gradient-text" style="background: linear-gradient(45deg, #ffc107, #ffeb3b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Campaigns</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="hero-subtitle mb-5" style="font-size: 1.3rem; color: rgba(255,255,255,0.95); line-height: 1.7; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+              Join our community-driven blood donation campaigns and make a real difference in saving lives across <strong>Layyah</strong> and surrounding areas.
+            </p>
+            
+            <!-- Professional Stats -->
+            <div class="hero-stats mb-5" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+              <div class="stat-item" style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">25+</div>
+                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Campaigns</div>
+              </div>
+              <div class="stat-item" style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">1500+</div>
+                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Donors</div>
+              </div>
+              <div class="stat-item" style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">9000+</div>
+                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Lives Saved</div>
+              </div>
+            </div>
+            
+            <!-- Professional CTA Button -->
+            <div class="hero-cta" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+              <a href="#upcoming-campaigns" class="primary-cta-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 18px 35px; background: white; color: #dc3545; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 2px solid white;">
+                <i class="fa-solid fa-calendar-check"></i>
+                View Campaigns
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+          <div class="hero-image-container" style="position: relative; text-align: center;">
+            <!-- Main Image -->
+            <div class="hero-image-wrapper" style="position: relative; display: inline-block;">
+              <img src="assets/images/campaigns/campaign gallery1.png" alt="Blood Donation Campaign" class="hero-main-image" style="max-width: 100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); transform: perspective(1000px) rotateY(-5deg); transition: all 0.3s ease;" />
+              
+              <!-- Floating Elements Around Image -->
+              <div class="floating-icon" style="position: absolute; top: -20px; left: -20px; width: 60px; height: 60px; background: linear-gradient(45deg, #ffc107, #ffeb3b); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: pulse 2s infinite;">
+                <i class="fa-solid fa-heart" style="color: white; font-size: 1.5rem;"></i>
+              </div>
+              <div class="floating-icon" style="position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; background: linear-gradient(45deg, #28a745, #20c997); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: pulse 2s infinite 1s;">
+                <i class="fa-solid fa-users" style="color: white; font-size: 1.2rem;"></i>
+              </div>
+            </div>
+            
+            <!-- Background Decoration -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; z-index: -1;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Statistics -->
+  <section class="ptb-80" style="background: #f8f9fa;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <div class="mb-3">
+              <i class="fa-solid fa-calendar-check" style="font-size: 2.5rem; color: #dc3545;"></i>
+            </div>
+            <h3 class="counter mb-2" style="color: #2c3e50; font-size: 2.5rem; font-weight: 700;"><span class="count">25</span>+</h3>
+            <p style="color: #6c757d; font-size: 1rem;">Campaigns Organized</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <div class="mb-3">
+              <i class="fa-solid fa-users" style="font-size: 2.5rem; color: #dc3545;"></i>
+            </div>
+            <h3 class="counter mb-2" style="color: #2c3e50; font-size: 2.5rem; font-weight: 700;"><span class="count">1500</span>+</h3>
+            <p style="color: #6c757d; font-size: 1rem;">Donors Participated</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <div class="mb-3">
+              <i class="fa-solid fa-tint" style="font-size: 2.5rem; color: #dc3545;"></i>
+            </div>
+            <h3 class="counter mb-2" style="color: #2c3e50; font-size: 2.5rem; font-weight: 700;"><span class="count">3000</span>+</h3>
+            <p style="color: #6c757d; font-size: 1rem;">Units Collected</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <div class="mb-3">
+              <i class="fa-solid fa-heart" style="font-size: 2.5rem; color: #dc3545;"></i>
+            </div>
+            <h3 class="counter mb-2" style="color: #2c3e50; font-size: 2.5rem; font-weight: 700;"><span class="count">9000</span>+</h3>
+            <p style="color: #6c757d; font-size: 1rem;">Lives Saved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Campaigns -->
+  <section id="upcoming-campaigns" class="ptb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">Upcoming Campaigns</h2>
+          <p style="font-size: 1.1rem; color: #6c757d; max-width: 600px; margin: 0 auto;">Join our upcoming blood donation campaigns and be part of the life-saving mission</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="campaign-card" style="background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+            <div class="campaign-image" style="position: relative; overflow: hidden;">
+              <img src="assets/images/campaigns/campaign gallery2.png" alt="University Campaign" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;" />
+              <div class="campaign-status" style="position: absolute; top: 15px; right: 15px; background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Upcoming</div>
+            </div>
+            <div class="p-4" style="flex: 1; display: flex; flex-direction: column;">
+              <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">AIMS University Blood Drive</h4>
+              <div class="campaign-details mb-3">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-calendar me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">December 15, 2024</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-clock me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">9:00 AM - 5:00 PM</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-map-marker-alt me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">AIMS University Campus, Layyah</span>
+                </div>
+              </div>
+              <p style="color: #6c757d; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; flex: 1;">
+                Join us for a comprehensive blood donation drive at AIMS University. Free health checkup and refreshments provided.
+              </p>
+              <div class="campaign-target" style="margin-top: auto;">
+                <div class="target-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,123,255,0.3);">
+                  <i class="fa-solid fa-bullseye"></i>
+                  <span>Target: 100 Units</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="campaign-card" style="background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+            <div class="campaign-image" style="position: relative; overflow: hidden;">
+              <img src="assets/images/campaigns/campaign gallery3.png" alt="Community Campaign" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;" />
+              <div class="campaign-status" style="position: absolute; top: 15px; right: 15px; background: #ffc107; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Registration Open</div>
+            </div>
+            <div class="p-4" style="flex: 1; display: flex; flex-direction: column;">
+              <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Layyah Community Blood Camp</h4>
+              <div class="campaign-details mb-3">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-calendar me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">December 20, 2024</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-clock me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">10:00 AM - 6:00 PM</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-map-marker-alt me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">Layyah City Center</span>
+                </div>
+              </div>
+              <p style="color: #6c757d; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; flex: 1;">
+                Community-wide blood donation campaign with mobile units and emergency response teams on standby.
+              </p>
+              <div class="campaign-target" style="margin-top: auto;">
+                <div class="target-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(40,167,69,0.3);">
+                  <i class="fa-solid fa-bullseye"></i>
+                  <span>Target: 150 Units</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="campaign-card" style="background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+            <div class="campaign-image" style="position: relative; overflow: hidden;">
+              <img src="assets/images/campaigns/campaign gallery4.png" alt="Emergency Campaign" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;" />
+              <div class="campaign-status" style="position: absolute; top: 15px; right: 15px; background: #dc3545; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Emergency</div>
+            </div>
+            <div class="p-4" style="flex: 1; display: flex; flex-direction: column;">
+              <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Emergency Blood Collection</h4>
+              <div class="campaign-details mb-3">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-calendar me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">Ongoing</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-clock me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">24/7 Available</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fa-solid fa-map-marker-alt me-2" style="color: #dc3545;"></i>
+                  <span style="color: #6c757d;">Multiple Locations</span>
+                </div>
+              </div>
+              <p style="color: #6c757d; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; flex: 1;">
+                Emergency blood collection for urgent medical needs. Quick response and immediate availability.
+              </p>
+              <div class="campaign-target" style="margin-top: auto;">
+                <div class="target-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #dc3545, #c82333); color: white; padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(220,53,69,0.3);">
+                  <i class="fa-solid fa-exclamation-triangle"></i>
+                  <span>Urgent Need</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Features -->
+  <section class="ptb-120" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">Why Join Our Campaigns?</h2>
+          <p style="font-size: 1.1rem; color: #6c757d; max-width: 600px; margin: 0 auto;">Discover the benefits of participating in our organized blood donation campaigns</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 100%;">
+            <div class="mb-4">
+              <i class="fa-solid fa-shield-alt" style="font-size: 3rem; color: #dc3545;"></i>
+            </div>
+            <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Safe & Professional</h4>
+            <p style="color: #6c757d; line-height: 1.6;">
+              All campaigns follow strict safety protocols with professional medical staff and sterile equipment.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 100%;">
+            <div class="mb-4">
+              <i class="fa-solid fa-heart" style="font-size: 3rem; color: #dc3545;"></i>
+            </div>
+            <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Health Checkup</h4>
+            <p style="color: #6c757d; line-height: 1.6;">
+              Free health screening including blood pressure, hemoglobin levels, and basic health assessment.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 100%;">
+            <div class="mb-4">
+              <i class="fa-solid fa-gift" style="font-size: 3rem; color: #dc3545;"></i>
+            </div>
+            <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Rewards & Recognition</h4>
+            <p style="color: #6c757d; line-height: 1.6;">
+              Certificates, refreshments, and recognition for your contribution to saving lives.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="text-center p-4" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 100%;">
+            <div class="mb-4">
+              <i class="fa-solid fa-users" style="font-size: 3rem; color: #dc3545;"></i>
+            </div>
+            <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Community Impact</h4>
+            <p style="color: #6c757d; line-height: 1.6;">
+              Be part of a larger community effort to ensure blood availability for emergency needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="ptb-120" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-8 col-lg-8 col-12 mb-4 mb-lg-0">
+          <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Ready to Make a Difference?</h2>
+          <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 0;">
+            Join our upcoming blood donation campaigns and help us save more lives. Every donation counts!
+          </p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-12 text-center text-lg-end">
+          <a href="register.html" class="primary__btn" style="padding: 15px 40px; font-weight: 600; font-size: 1.1rem;">Join Campaign Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- campaign details end -->
+
+  <!-- footer placeholder -->
+      <div id="footer-placeholder"></div>
+
+  <!-- Javascript Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/fancybox.js"></script>
+  <script src="assets/js/counterup.min.js"></script>
+  <script src="assets/js/progress-bar.js"></script>
+  <script src="assets/js/smooth-scroll.min.js"></script>
+  <script src="assets/js/nice-select.js"></script>
+  <script src="assets/js/waypoints.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="js/components.js"></script>
+  <style>
+    /* Professional Campaign Hero Section Styling */
+    .campaign-hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+    
+    /* Professional Badge Animation */
+    .professional-badge {
+      animation: slideInDown 1s ease-out;
+    }
+    
+    /* Hero Title Animation */
+    .hero-title {
+      animation: slideInLeft 1.2s ease-out;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(45deg, #ffc107, #ffeb3b, #ffc107);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease-in-out infinite;
+    }
+    
+    /* Hero Subtitle Animation */
+    .hero-subtitle {
+      animation: slideInLeft 1.4s ease-out;
+    }
+    
+    /* Hero Stats Animation */
+    .hero-stats {
+      animation: slideInUp 1.6s ease-out;
+    }
+    
+    .stat-item {
+      transition: all 0.3s ease;
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Professional CTA Buttons */
+    .primary-cta-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .primary-cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .primary-cta-btn:hover::before {
+      left: 100%;
+    }
+    
+    .primary-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    
+    .secondary-cta-btn:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    
+    /* Hero Image Animations */
+    .hero-main-image {
+      animation: slideInRight 1.5s ease-out;
+    }
+    
+    .hero-main-image:hover {
+      transform: perspective(1000px) rotateY(-2deg) scale(1.02);
+    }
+    
+    .floating-icon {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .floating-icon:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+    
+    /* Background Floating Elements */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px) perspective(1000px) rotateY(-5deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) perspective(1000px) rotateY(-5deg);
+      }
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Professional Campaign Page Styling */
+    .campaign-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    /* Professional Target Badge Styling */
+    .target-badge {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .target-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .target-badge:hover::before {
+      left: 100%;
+    }
+    
+    .target-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    
+    /* Campaign card equal height */
+    .campaign-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .campaign-card .p-4 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .campaign-card p {
+      flex: 1;
+    }
+    
+    .campaign-target {
+      margin-top: auto;
+    }
+    
+    .campaign-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      border-color: #dc3545;
+    }
+    
+    .campaign-image img {
+      transition: all 0.3s ease;
+    }
+    
+    .campaign-card:hover .campaign-image img {
+      transform: scale(1.05);
+    }
+    
+    .campaign-status {
+      transition: all 0.3s ease;
+    }
+    
+    .campaign-card:hover .campaign-status {
+      transform: scale(1.1);
+    }
+    
+    /* Professional button hover effects */
+    .primary__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(220, 53, 69, 0.4);
+    }
+    
+    /* Counter animation */
+    .counter {
+      animation: countUp 2s ease-out;
+    }
+    
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Professional card entrance animations */
+    .campaign-card {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Staggered animation for campaign cards */
+    .campaign-card:nth-child(1) { animation-delay: 0.1s; }
+    .campaign-card:nth-child(2) { animation-delay: 0.2s; }
+    .campaign-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    /* Professional gradient backgrounds */
+    .hero-gradient {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    }
+    
+    .cta-gradient {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    /* Professional typography */
+    .campaign-title {
+      font-weight: 700;
+      background: linear-gradient(135deg, #dc3545, #c82333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Professional badge styling */
+    .campaign-badge {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    /* Professional icon styling */
+    .campaign-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .campaign-card:hover .campaign-icon {
+      transform: scale(1.1);
+      color: #dc3545;
+    }
+    
+    /* Professional spacing and shadows */
+    .campaign-section {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .campaign-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(220, 53, 69, 0.05) 0%, rgba(200, 35, 51, 0.05) 100%);
+      pointer-events: none;
+    }
+    
+    /* Professional responsive design */
+    @media (max-width: 768px) {
+      .campaign-card {
+        margin-bottom: 2rem;
+      }
+      
+      .campaign-title {
+        font-size: 2rem;
+      }
+    }
+    
+    /* Professional loading animations */
+    .campaign-loading {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+  </style>
+
+  <script>
+    // Enhanced animation for better user experience
+    const tags = ['div', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'li', 'a', 'section', 'article'];
+    let delay = 0.1;
+    document.addEventListener('DOMContentLoaded', function() {
+      tags.forEach(tag => {
+        document.querySelectorAll(tag).forEach(el => {
+          if (!el.classList.contains('wow')) {
+            el.classList.add('wow', 'fadeInUp');
+            el.setAttribute('data-wow-delay', delay.toFixed(1) + 's');
+            delay += 0.1;
+            if (delay > 1.5) delay = 0.1;
+          }
+        });
+      });
+      new WOW().init();
+      
+      // Add professional hover effects for campaign cards
+      const campaignCards = document.querySelectorAll('.campaign-card');
+      campaignCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+      
+      // Add counter animation
+      const counters = document.querySelectorAll('.counter');
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'countUp 2s ease-out';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

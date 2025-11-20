@@ -1,0 +1,12 @@
+.template-pagination li a {
+  display: inline-block;
+  background-color: var(--light-color);
+  padding: 9px 12px;
+  color: var(--primary-color);
+  font-size: 14px; }
+  .template-pagination li a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color); }
+  .template-pagination li a.active {
+    background-color: var(--primary-color);
+    color: var(--white-color); }

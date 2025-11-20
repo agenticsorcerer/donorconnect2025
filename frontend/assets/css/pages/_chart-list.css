@@ -1,0 +1,6 @@
+/*************chart__list**************/
+table {
+  text-align: center; }
+  table th {
+    background: var(--whiten-color);
+    text-align: center; }

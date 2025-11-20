@@ -1,0 +1,114 @@
+.km__post__content {
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.cam_details_list {
+  ul {
+    li {
+      font-weight: 500;
+      color: var(--secondary-color);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & + li {
+        margin-top: 14px;
+      }
+      i {
+        color: var(--primary-color);
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.cam_detail_slider {
+  &.custom_dots {
+    .slick-dots {
+      margin-top: 20px;
+      li {
+        span {
+          width: 22px;
+          height: 6px;
+          background: #c1bfbf;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+        }
+        &.slick-active span {
+          background: var(--primary-color);
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+.side_catagory {
+  background: var(--gray2);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: none;
+  border-bottom: 5px solid transparent;
+  transition: var(--transition);
+  border-bottom: 5px solid var(--primary-color);
+
+  h5 {
+    font-size: 28px;
+  }
+  ul {
+    li {
+      cursor: pointer;
+      &:hover {
+        a {
+          color: var(--primary-color);
+          i {
+            color: var(--primary-color);
+          }
+        }
+      }
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--secondary-color);
+        transition: var(--transition);
+        i {
+          color: var(--secondary-color);
+          transition: var(--transition);
+        }
+      }
+    }
+  }
+}
+
+.side_donate {
+  padding: 70px 20px;
+  p {
+    color: var(--secondary-color);
+  }
+  a.explore_now {
+    width: 170px;
+  }
+}
+
+.side_blog_content {
+  a {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-bottom: 8px;
+    &:hover {
+      color: var(--transition);
+    }
+  }
+  span {
+    color: var(--primary-color);
+    font-size: 16px;
+  }
+}

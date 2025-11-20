@@ -1,0 +1,96 @@
+/***************km__service__one***********************/
+.km__service__one {
+  background: var(--gray2);
+  padding: 30px 20px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 5px;
+    background: var(--primary-color);
+  }
+}
+
+.km-sd-service-details-list {
+  li {
+    a {
+      background: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      margin-bottom: 13px;
+      color: var(--secondary-color);
+      font-weight: 500;
+      text-transform: capitalize;
+      position: relative;
+      transition: var(--transition_base);
+      z-index: 1;
+      &:hover {
+        color: var(--white);
+        &::after {
+          width: 100%;
+          color: var(--white);
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: var(--primary-color);
+        z-index: -1;
+        transition: var(--transition_base);
+      }
+    }
+  }
+}
+
+.km__service__three {
+  background: var(--gray2);
+  padding: 30px 20px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 5px;
+    background: var(--primary-color);
+  }
+}
+
+/*********************km__sd__accordion****************************/
+.km__sd__accordion {
+  .accordion-item {
+    border: none;
+    box-shadow: 0px 16px 35px 0px rgba(0, 0, 0, 0.15);
+    + .accordion-item {
+      margin-top: 15px;
+    }
+  }
+  .accordion-button {
+    font-size: 20px;
+    font-weight: 600;
+    &::after {
+      background: none;
+      content: "\f0d7";
+      font-family: "FontAwesome";
+      width: auto;
+      height: auto;
+    }
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+  }
+}
+
+.km_sd_box {
+  padding: 30px 20px;
+}

@@ -1,0 +1,115 @@
+// hero
+.hm3_hero {
+  background: url("../images/hm3.jpg") no-repeat;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  padding: 240px 0;
+  background-position: center center;
+  &.hm31 {
+    background: url("../images/hm3.jpg") no-repeat;
+  }
+  &.hm32 {
+    background: url("../images/hm1.png") no-repeat;
+  }
+  &.hm33 {
+    background: url("../images/hm2.jpg") no-repeat;
+  }
+  @media (max-width: 767px) {
+    padding: 120px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #00000082;
+    z-index: -1;
+  }
+}
+
+// blood
+.blood3 {
+  background: url("../images/b3.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  h2 {
+    margin-bottom: 15px;
+  }
+  span {
+    color: white;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .explore_now {
+    width: 170px;
+    height: 50px;
+  }
+}
+
+// gallery
+.gallery3 {
+  padding-bottom: 90px;
+  @media (max-width: 767px) {
+    padding-bottom: 50px;
+  }
+}
+
+// request & appoinment
+.request3 h4 {
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.current2 {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 9px 52px 0px rgba(0, 0, 0, 0.07);
+  padding: 35px;
+}
+
+.payment {
+  .accordion {
+    --bs-accordion-border-color: none !important;
+    .accordion-item {
+      margin-top: 25px;
+      h2 {
+        padding-bottom: 0;
+        background: var(--gray1);
+        button {
+          padding: 0;
+          background: var(--gray1);
+          height: 55px;
+          padding-left: 40px;
+          font-size: 18px;
+          font-weight: 600;
+          transition: var(--transition);
+          &::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' class='bi bi-plus-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/%3E%3C/svg%3E");
+            position: absolute;
+            left: 10px;
+            width: 16px;
+            height: 15px;
+            background-size: cover;
+          }
+          &:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+          }
+        }
+      }
+    }
+  }
+  .accordion-collapse {
+    .accordion-body {
+      background: var(--gray1);
+      border-top: 1px solid var(--gray);
+    }
+  }
+}
+
+.get_code {
+  padding: 13px 28px;
+  font-size: 20px;
+}

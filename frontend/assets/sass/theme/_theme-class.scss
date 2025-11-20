@@ -1,0 +1,94 @@
+.container {
+  padding: 0 12px;
+  @include portrait-phone {
+    padding: 0 16px;
+  }
+}
+
+.primary-bg-color {
+  background-color: var(--primary-color);
+}
+
+.primary-text-color {
+  color: var(--primary-color);
+}
+
+.secondary-bg-color {
+  background-color: var(--secondary-color);
+}
+
+.secondary-text-color {
+  color: var(--secondary-color);
+}
+
+.white-color {
+  color: var(--white-color);
+}
+.white-bg {
+  background: var(--white-color);
+}
+
+.primary-light-color {
+  color: var(--primary-light);
+}
+
+.primary-light-bg {
+  background: var(--primary-light);
+}
+.light-btn-color {
+  color: var(--light-btn-color);
+}
+.light-btn-bg {
+  background: var(--light-btn-color);
+}
+.danger-color {
+  color: var(--danger-color);
+}
+.danger-bg {
+  background: var(--danger-color);
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.lead {
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.title-style-2 {
+  span {
+    transform: translateY(-8px);
+  }
+}
+
+.z--1 {
+  z-index: -1;
+}
+
+.body-font {
+  font-family: var(--body-font);
+}
+
+.slider-spacing {
+  .slick-list {
+    margin: 0 -12px;
+    .slick-slide {
+      margin: 0 12px;
+    }
+  }
+}
+
+.list-style-type-disc {
+  list-style-type: disc;
+  margin-left: 16px;
+}
+
+.color-black {
+  color: var(--hm4-headings-color);
+}

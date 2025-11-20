@@ -1,0 +1,263 @@
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1170px !important;
+  margin: auto;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--secondary-color);
+}
+
+.h1,
+h1 {
+  font-size: 72px;
+  @include screen-768 {
+    font-size: 50px;
+  }
+  @include portrait-phone {
+    font-size: 40px;
+  }
+}
+.h2,
+h2 {
+  font-size: 48px;
+  @include screen-768 {
+    font-size: 42px;
+  }
+  @include portrait-phone {
+    font-size: 36px;
+  }
+}
+.h3,
+h3 {
+  font-size: 36px;
+  @include portrait-phone {
+    font-size: 30px;
+  }
+}
+
+.h4,
+h4 {
+  font-size: 30px;
+}
+
+.h5,
+h5 {
+  font-size: 24px;
+}
+.h6,
+h6 {
+  font-size: 22px;
+}
+
+.fs-20 {
+  font-size: 20px;
+  line-height: 34px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.fss-18 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+.fs-14 {
+  font-size: 14px;
+  line-height: 32px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fw-5 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+input {
+  &:focus {
+    border-color: none !important;
+    outline: 0;
+    box-shadow: none !important;
+  }
+}
+.form-select:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.accordion-button:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+p {
+  font-size: 16px;
+  color: var(--p-color);
+}
+.red_color {
+  color: green;
+}
+.red_bg {
+  background: green;
+}
+.black_color {
+  color: var(--secondary-color);
+}
+.black_bg {
+  background: var(--secondary-color);
+}
+.gray_bg {
+  background: var(--gray_bg);
+}
+.gray {
+  background: var(--gray);
+}
+
+.white_color {
+  color: var(--white);
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  option {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--primary-color) !important;
+    }
+    &:focus-visible {
+      outline: none !important;
+    }
+  }
+}
+
+select:focus {
+  box-shadow: none;
+}
+
+.img {
+  overflow: hidden;
+  img {
+    transition: var(--transition);
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.common_title {
+  p {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}
+
+.common_title1 {
+  p {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--white);
+  }
+}
+
+.slider-spacing {
+  .slick-list {
+    margin: 0 -12px;
+    .slick-slide {
+      margin: 0 12px;
+    }
+  }
+}
+
+.custom_dots {
+  .slick-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+    li {
+      span {
+        margin: 3px 0;
+        border: 4px solid var(--gray);
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        outline: 1px solid var(--primary-color);
+        background: transparent;
+      }
+      &.slick-active span {
+        background: var(--primary-color);
+      }
+    }
+  }
+}
+
+.fs-42 {
+  font-size: 42px;
+}
+
+.slider-spacing {
+  .slick-list {
+    margin: 0 -12px;
+    .slick-slide {
+      margin: 0 12px;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.sidebar-widget .widget-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 50px;
+  height: 1px;
+  background-color: var(--primary-color); }
+
+.sidebar-widget .sidebar-check-fields li {
+  display: block; }
+  .sidebar-widget .sidebar-check-fields li label {
+    position: relative;
+    display: block; }
+    .sidebar-widget .sidebar-check-fields li label > span {
+      padding-left: 32px;
+      display: block;
+      position: relative;
+      font-weight: 300; }
+      .sidebar-widget .sidebar-check-fields li label > span::before {
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        font-size: 12px;
+        text-align: center;
+        line-height: 17px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--border-gray);
+        color: transparent;
+        -webkit-transition: var(--transition-base);
+        -o-transition: var(--transition-base);
+        transition: var(--transition-base); }
+      .sidebar-widget .sidebar-check-fields li label > span span {
+        float: right; }
+    .sidebar-widget .sidebar-check-fields li label input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0; }
+      .sidebar-widget .sidebar-check-fields li label input:checked ~ span::before {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-color: var(--primary-color); }
+  .sidebar-widget .sidebar-check-fields li + li {
+    margin-top: 18px; }
+
+.sidebar-widget .color-select li label {
+  position: relative;
+  display: block; }
+  .sidebar-widget .color-select li label > span {
+    padding-left: 32px;
+    display: block;
+    font-weight: 300;
+    position: relative; }
+    .sidebar-widget .color-select li label > span::before {
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      color: transparent;
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%; }
+    .sidebar-widget .color-select li label > span span {
+      float: right; }
+    .sidebar-widget .color-select li label > span.bg-soft-gold::before {
+      background-color: #EB9A3C; }
+    .sidebar-widget .color-select li label > span.bg-light-pink::before {
+      background-color: #FAA9D9; }
+    .sidebar-widget .color-select li label > span.bg-green-touch::before {
+      background-color: #99C88D; }
+    .sidebar-widget .color-select li label > span.bg-navy-blue::before {
+      background-color: #A9BFFA; }
+    .sidebar-widget .color-select li label > span.bg-gray-white::before {
+      background-color: #EEEACA; }
+  .sidebar-widget .color-select li label input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; }
+    .sidebar-widget .color-select li label input:checked ~ span::before {
+      color: var(--white-color); }
+
+.sidebar-widget .color-select li + li {
+  margin-top: 18px; }
+
+.products-widget .sidebar-products li .thumbnail {
+  max-width: 90px; }
+
+.products-widget .sidebar-products li + li {
+  margin-top: 24px; }
+
+.filter-widget .ur-pricing-range {
+  border: 0;
+  background-color: var(--border-gray);
+  height: 5px; }
+  .filter-widget .ur-pricing-range .ui-slider-range {
+    background-color: var(--secondary-color); }
+  .filter-widget .ur-pricing-range .ui-slider-handle {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 0;
+    background-color: var(--white-color);
+    padding: 0;
+    outline: 0; }
+    .filter-widget .ur-pricing-range .ui-slider-handle::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background-color: var(--secondary-color); }
+
+.filter-widget p {
+  font-weight: 300; }
+
+.filter-widget input {
+  border: 0;
+  font-weight: 300; }
+
+.filter-widget .submit-btn {
+  -webkit-transition: var(--transition-base);
+  -o-transition: var(--transition-base);
+  transition: var(--transition-base); }
+  .filter-widget .submit-btn:hover {
+    color: var(--secondary-color); }
+
+.latest-post-widget .latest-posts li + li {
+  margin-top: 25px; }
+
+.latest-post-widget .latest-posts .feature-image {
+  width: 90px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  overflow: hidden; }
+  .latest-post-widget .latest-posts .feature-image img {
+    -webkit-transition: var(--transition-base);
+    -o-transition: var(--transition-base);
+    transition: var(--transition-base); }
+    .latest-post-widget .latest-posts .feature-image img:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05); }
+
+.latest-post-widget .latest-posts h6 {
+  -webkit-transition: var(--transition-base);
+  -o-transition: var(--transition-base);
+  transition: var(--transition-base); }
+  .latest-post-widget .latest-posts h6:hover {
+    color: var(--secondary-color); }
+
+.tags-widget .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .tags-widget .tags a {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid var(--light-stroke);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--primary-color); }
+    .tags-widget .tags a:hover {
+      color: var(--white-color);
+      background-color: var(--primary-color); }
+
+.instagram-widget .insta-posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 15px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .instagram-widget .insta-posts li {
+    width: calc(33% - 10px);
+    overflow: hidden; }
+    .instagram-widget .insta-posts li img {
+      -webkit-transition: var(--transition-base);
+      -o-transition: var(--transition-base);
+      transition: var(--transition-base); }
+      .instagram-widget .insta-posts li img:hover {
+        -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+        transform: scale(1.08); }

@@ -1,0 +1,34 @@
+/**************************donate__form***********************/
+.current {
+  padding: 0;
+  box-shadow: none;
+  &:focus {
+    background: green;
+  }
+}
+.km__nice__select {
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+.nice-select {
+  width: 100%;
+  float: none;
+  height: 50px;
+  .current {
+    padding-top: 7px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--p-color);
+    display: block;
+  }
+  .list {
+    width: 100%;
+  }
+  &:focus {
+    border: 1px solid var(--primary-color);
+  }
+}

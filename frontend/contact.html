@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Donor Connect | Blood Donation Services</title>
+  <meta name="description" content="Get in touch with Donor Connect for blood donation services, emergency support, and volunteer opportunities. We're here to help save lives.">
+  <meta name="keywords" content="blood donation, contact, emergency, volunteer, donor connect">
+
+  <!--Essential css files-->
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/fancybox.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.png">
+</head>
+
+<body>
+  <!--preloader start-->
+  <div class="preloader">
+    <h1>Donor Connect</h1>
+    <div class="preload-progress">
+      <span></span>
+    </div>
+  </div>
+  <!--preloader end-->
+
+  <!-- scroll to top -->
+  <div class="progress-wrap cursor-pointer active-progress">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+        style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 221.377;">
+      </path>
+    </svg>
+  </div>
+  <!-- scroll to top -->
+
+   <!-- header placeholder -->
+   <div id="header-placeholder"></div>
+
+  <!-- breadcrumb start -->
+  <div class="breadcrumb_section overflow-hidden ptb-150">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12 text-center">
+          <h2>Contact Us</h2>
+          <p class="text-muted mb-3">We're here to help and answer any questions you might have</p>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Contact Us</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- breadcrumb end -->
+
+  <!-- contact info section start -->
+  <section class="ptb-80 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="contact-info-card text-center p-4 h-100">
+            <div class="icon-box mb-3">
+              <i class="fa fa-phone-alt fa-2x text-primary"></i>
+            </div>
+            <h5 class="mb-2">Emergency Hotline</h5>
+            <p class="mb-2 text-muted">24/7 Emergency Support</p>
+            <a href="tel:+923001234567" class="text-primary fw-bold">+92 300 123 4567</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="contact-info-card text-center p-4 h-100">
+            <div class="icon-box mb-3">
+              <i class="fas fa-location-dot fa-2x text-primary"></i>
+            </div>
+            <h5 class="mb-2">Visit Our Center</h5>
+            <p class="mb-2 text-muted">Main Office Location</p>
+            <address class="text-primary fw-bold mb-0">
+              Main Bazaar, Layyah<br>
+              Punjab, Pakistan 31200
+            </address>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="contact-info-card text-center p-4 h-100">
+            <div class="icon-box mb-3">
+              <i class="fas fa-clock fa-2x text-primary"></i>
+            </div>
+            <h5 class="mb-2">Operating Hours</h5>
+            <p class="mb-2 text-muted">Monday - Friday</p>
+            <p class="text-primary fw-bold mb-0">8:00 AM - 7:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- contact info section end -->
+
+  <!-- message box start -->
+  <section class="km__message__box ptb-120">
+    <div class="container">
+      <div class="km__contact__form">
+        <div class="row g-5">
+          <div class="col-xl-7">
+            <div class="km__box__form">
+              <h4 class="mb-40">Send Us a Message</h4>
+              <p class="mb-30 text-muted">
+                Have questions about blood donation, want to volunteer, or need emergency assistance? 
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+              <form action="#" class="km__main__form" id="contactForm">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="firstName" class="form-label">First Name *</label>
+                      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter your first name" required>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="lastName" class="form-label">Last Name *</label>
+                      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter your last name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 mt-3">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address *</label>
+                      <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 mt-3">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="subject" class="form-label">Subject *</label>
+                      <select id="subject" name="subject" class="form-control" required>
+                        <option value="">Select a subject</option>
+                        <option value="blood-donation">Blood Donation Inquiry</option>
+                        <option value="volunteer">Volunteer Opportunities</option>
+                        <option value="emergency">Emergency Assistance</option>
+                        <option value="partnership">Partnership/Corporate</option>
+                        <option value="general">General Inquiry</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 mt-3">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message" class="form-label">Message *</label>
+                      <textarea id="message" name="message" class="form-control" rows="5" placeholder="Please describe your inquiry in detail..." required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 mt-3">
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="privacy" required>
+                      <label class="form-check-label" for="privacy">
+                        I agree to the <a href="privacypolicy.html" class="text-primary">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="contact__btn mt-4">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-angles-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-5">
+            <div class="km__form__content">
+              <span class="sub__title text-white fw-semibold mb-2 d-block">Professional Excellence</span>
+              <h3 class="km__form__title mb-4 fw-bold text-white">Comprehensive Blood Donation Services</h3>
+              <p class="form_des text-white-50 fs-6 lh-base mb-4">
+                At Donor Connect, we are committed to saving lives through safe and efficient blood donation services. 
+                Our professional team ensures the highest standards of care and safety for all donors and recipients.
+              </p>
+              
+              <div class="service-highlights mb-4">
+                <h5 class="mb-3 fw-bold text-white">Our Services Include:</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3 d-flex align-items-center">
+                    <div class="service-icon me-3">
+                      <i class="fa fa-check-circle text-success fs-5"></i>
+                    </div>
+                    <span class="text-white fw-medium">Emergency Blood Supply Management</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <div class="service-icon me-3">
+                      <i class="fa fa-check-circle text-success fs-5"></i>
+                    </div>
+                    <span class="text-white fw-medium">Blood Type Testing & Screening</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <div class="service-icon me-3">
+                      <i class="fa fa-check-circle text-success fs-5"></i>
+                    </div>
+                    <span class="text-white fw-medium">Mobile Blood Donation Units</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <div class="service-icon me-3">
+                      <i class="fa fa-check-circle text-success fs-5"></i>
+                    </div>
+                    <span class="text-white fw-medium">Corporate Blood Drive Programs</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <div class="service-icon me-3">
+                      <i class="fa fa-check-circle text-success fs-5"></i>
+                    </div>
+                    <span class="text-white fw-medium">24/7 Emergency Response</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="emergency-contact p-4 bg-danger text-white rounded-3 shadow-lg border border-danger border-3 position-relative overflow-hidden">
+                <!-- Animated background effect -->
+                <div class="emergency-bg-animation position-absolute top-0 start-0 w-100 h-100 opacity-10"></div>
+                
+                <div class="d-flex align-items-start position-relative">
+                  <div class="emergency-icon me-3 mt-1">
+                    <i class="fa fa-exclamation-triangle fs-1 text-warning emergency-pulse"></i>
+                  </div>
+                  <div class="emergency-content">
+                    <h4 class="mb-3 fw-bold text-uppercase emergency-text text-white">
+                      <i class="fa fa-bell me-2"></i>Emergency Blood Need?
+                    </h4>
+                    <p class="mb-3 fs-6 text-white fw-medium">For urgent blood requirements, call our emergency hotline immediately:</p>
+                    <a href="tel:+923001234567" class="emergency-phone text-white fw-bold fs-3 text-decoration-none d-block bg-warning bg-opacity-25 p-3 rounded-2 border border-warning">
+                      <i class="fa fa-phone me-2"></i>+92 300 123 4567
+                    </a>
+                    <p class="mt-2 mb-0 small text-white fw-medium">
+                      <i class="fa fa-clock me-1"></i>24/7 Emergency Response Available
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- message box ends -->
+
+  <!-- social media section start -->
+  <section class="ptb-80 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h4 class="mb-4">Connect With Us</h4>
+          <p class="text-muted mb-4">Follow us on social media for updates, blood donation campaigns, and community events.</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="#" class="btn btn-outline-primary px-4 py-2">
+              <i class="fab fa-facebook-f me-2"></i>Facebook
+            </a>
+            <a href="#" class="btn btn-outline-info px-4 py-2">
+              <i class="fab fa-twitter me-2"></i>Twitter
+            </a>
+            <a href="#" class="btn btn-outline-danger px-4 py-2">
+              <i class="fab fa-instagram me-2"></i>Instagram
+            </a>
+            <a href="#" class="btn btn-outline-success px-4 py-2">
+              <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- social media section end -->
+
+  <!-- map section start -->
+  <section class="ptb-80">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-3">Find Our Location</h3>
+          <p class="text-muted">Visit our main office in Layyah or contact us to schedule a mobile blood donation unit at your location.</p>
+        </div>
+      </div>
+    </div>
+    <div class="km__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.1234567890123!2d70.939722!3d30.961111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3924a3b8b8b8b8b8%3A0xb8b8b8b8b8b8b8b8!2sLayyah%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+        style="border:0; width: 100%; height: 450px;" allowfullscreen="" loading="lazy" title="Donor Connect Location - Layyah, Pakistan"></iframe>
+    </div>
+  </section>
+  <!-- map section ends -->
+ 
+   <!-- footer placeholder -->
+   <div id="footer-placeholder"></div>
+
+  <!-- Javascript Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/fancybox.js"></script>
+  <script src="assets/js/counterup.min.js"></script>
+  <script src="assets/js/progress-bar.js"></script>
+  <script src="assets/js/smooth-scroll.min.js"></script>
+  <script src="assets/js/nice-select.js"></script>
+  <script src="assets/js/waypoints.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="js/components.js"></script>
+  
+  <!-- Contact Form Validation -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Basic form validation
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+      
+      if (!firstName || !lastName || !email || !subject || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitBtn = document.querySelector('.contact__btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>Sending...</span><i class="fa fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Thank you for your message! We will get back to you within 24 hours.');
+        document.getElementById('contactForm').reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  </script>
+
+  <!-- Emergency Alert Styles -->
+  <style>
+    .emergency-contact {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      animation: emergencyGlow 2s ease-in-out infinite alternate;
+    }
+    
+    .emergency-pulse {
+      animation: emergencyPulse 1.5s ease-in-out infinite;
+    }
+    
+    .emergency-text {
+      animation: emergencyText 2s ease-in-out infinite;
+    }
+    
+    .emergency-phone {
+      transition: all 0.3s ease;
+      animation: phoneGlow 2s ease-in-out infinite alternate;
+    }
+    
+    .emergency-phone:hover {
+      transform: scale(1.05);
+      background: rgba(255, 193, 7, 0.4) !important;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.6);
+    }
+    
+    .emergency-bg-animation {
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      animation: emergencyBg 3s ease-in-out infinite;
+    }
+    
+    @keyframes emergencyGlow {
+      0% { box-shadow: 0 0 10px rgba(220, 53, 69, 0.5); }
+      100% { box-shadow: 0 0 25px rgba(220, 53, 69, 0.8), 0 0 35px rgba(220, 53, 69, 0.6); }
+    }
+    
+    @keyframes emergencyPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes emergencyText {
+      0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+      50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); }
+      100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    }
+    
+    @keyframes phoneGlow {
+      0% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); }
+      100% { box-shadow: 0 0 15px rgba(255, 193, 7, 0.6), 0 0 25px rgba(255, 193, 7, 0.4); }
+    }
+    
+    @keyframes emergencyBg {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+
+  <script>
+    // List of tags you want to animate
+    const tags = ['div', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'li', 'a', 'section', 'article'];
+    let delay = 0.1;
+    document.addEventListener('DOMContentLoaded', function() {
+      tags.forEach(tag => {
+        document.querySelectorAll(tag).forEach(el => {
+          if (!el.classList.contains('wow')) {
+            el.classList.add('wow', 'fadeInUp');
+            el.setAttribute('data-wow-delay', delay.toFixed(1) + 's');
+            delay += 0.1;
+            if (delay > 1.5) delay = 0.1; // Reset after 1.5s for variety
+          }
+        });
+      });
+      new WOW().init();
+    });
+  </script>
+</body>
+
+</html>

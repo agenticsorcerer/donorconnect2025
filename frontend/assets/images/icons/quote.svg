@@ -1,0 +1,16 @@
+<svg id="Testimonials" xmlns="http://www.w3.org/2000/svg" width="22" height="13" viewBox="0 0 22 13">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 48px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: Jost*;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="text">
+    <text id="_" data-name="“" class="cls-1" x="11" y="34"><tspan x="11">“</tspan></text>
+  </g>
+</svg>

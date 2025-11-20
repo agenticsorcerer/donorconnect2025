@@ -1,0 +1,285 @@
+/****************hm1_content_form*********************/
+.hm1_contact_form {
+  input,
+  select {
+    border-radius: 0;
+    background-color: var(--gray1);
+    color: var(--secondary-color);
+    border: none;
+    height: 55px;
+    padding-left: 18px;
+    border: 1px solid transparent;
+    &:focus {
+      border: 1px solid var(--primary-color);
+    }
+  }
+  textarea {
+    border-radius: 0;
+    background-color: var(--gray1);
+    color: var(--secondary-color);
+    border: none;
+    height: 180px;
+    padding-left: 18px;
+    box-shadow: none !important;
+    border: 1px solid transparent;
+    &:focus {
+      border: 1px solid var(--primary-color);
+    }
+  }
+  button {
+    width: 165px;
+    height: 55px;
+    border-radius: 0 !important;
+    color: var(--white);
+    border: none;
+    background: var(--primary-color);
+  }
+}
+
+/******************km__contact__form******************/
+.km__contact__form {
+  padding: 60px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 13px 38px 0px rgba(28, 28, 28, 0.15);
+  @media (max-width: 767px) {
+    padding: 40px 10px;
+  }
+}
+
+.km__main__form {
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 13px;
+    background: #f1f1f1;
+    border: none;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    &:focus {
+      background: transparent;
+      border: 1px solid var(--primary-color);
+    }
+  }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: #f1f1f1;
+    border: none;
+    padding: 20px;
+    text-transform: capitalize;
+    outline: none;
+    border: 1px solid transparent;
+    &:focus {
+      background: transparent;
+      border: 1px solid var(--primary-color);
+    }
+  }
+}
+
+/**************************write__comments__form********************************/
+.write__comment__form {
+  form {
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 3px 81px 0px rgba(0, 0, 0, 0.09);
+      margin-bottom: 20px;
+      padding: 16px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      border: 1px solid transparent;
+      transition: var(--transition_base);
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 3px 81px 0px rgba(0, 0, 0, 0.09);
+      margin-bottom: 20px;
+      padding: 16px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      outline: none;
+      border: 1px solid transparent;
+      transition: var(--transition_base);
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+  }
+}
+
+/*****************************km__submit__form***************************/
+
+.km__submit__form {
+  form {
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 3px 81px 0px rgba(0, 0, 0, 0.09);
+      margin-bottom: 20px;
+      padding: 13px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      border: 1px solid transparent;
+      transition: var(--transition_base);
+      &:focus {
+        background: #f1f1f1;
+        border: 1px solid var(--primary-color);
+      }
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 3px 81px 0px rgba(0, 0, 0, 0.09);
+      margin-bottom: 20px;
+      padding: 13px;
+      color: #8c8c8c;
+      font-weight: 400;
+      outline: none;
+      text-transform: capitalize;
+      border: 1px solid transparent;
+      transition: var(--transition_base);
+      &:focus {
+        background: #f1f1f1;
+        border: 1px solid var(--primary-color);
+      }
+    }
+  }
+}
+
+/**************************Donate Now*********************/
+.km__donate__form {
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  form {
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      padding: 13px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      border: 1px solid var(--border-color);
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      padding: 13px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      outline: none;
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+  }
+}
+
+/***********************search__widget**************************/
+.search__widget {
+  form {
+    display: flex;
+    align-items: center;
+    input {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      background: #f9f9f9;
+    }
+    .bl-submit-btn {
+      width: 70px;
+      height: 60px;
+      background: var(--primary-color);
+      border: none;
+      i {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+/******************km__register__box **********************/
+.km__form__box {
+  border: 1px solid var(--border-color);
+  padding: 48px 40px;
+  form {
+    input {
+      height: 50px;
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      padding: 4px 15px;
+      border: solid 1px #e8e8e8;
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+    label {
+      text-align: left;
+    }
+    select {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      padding: 7px 15px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+/***********************km__sd__form****************************/
+.km__sd__form {
+  form {
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+      padding: 10px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      border: 1px solid var(--border-color);
+      background: var(--white);
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      padding: 13px;
+      color: #8c8c8c;
+      font-weight: 400;
+      text-transform: capitalize;
+      border: 1px solid var(--border-color);
+      background: var(--white);
+      outline: none;
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+    }
+  }
+}

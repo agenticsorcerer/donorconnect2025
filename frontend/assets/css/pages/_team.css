@@ -1,0 +1,12 @@
+.team-form .team-form-flexing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .team-form .team-form-flexing .team-bg-color {
+    background-color: var(--text-color);
+    width: 30%; }
+  .team-form .team-form-flexing .team-bg-img {
+    width: 70%; }

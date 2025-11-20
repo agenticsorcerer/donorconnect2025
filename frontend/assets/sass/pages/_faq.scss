@@ -1,0 +1,42 @@
+/*****************website__title***********************/
+.km__website__title{
+    h2{
+        span{
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/*********************accordion*******************************/
+.km__submit__section{
+    background: #f9f9f9;
+}
+
+.km_accordion {
+    .accordion-item {
+        border: 0; 
+        box-shadow: 0px 16px 35px 0px rgba(0, 0, 0, 0.15);
+        + .accordion-item {
+            margin-top: 15px;
+        }
+        .accordion-button {
+            font-size: 20px;
+            font-weight: 600;
+            &::after {
+                background: none;
+                content: '\f107';
+                font-family: 'FontAwesome';
+                width: auto;
+                height: auto;
+            }
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+    }
+}

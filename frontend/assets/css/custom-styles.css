@@ -1,0 +1,327 @@
+/* Custom styles for Donor Connect */
+/* Green hover effects for register and donate buttons */
+
+/* Register and Donate button hover effects */
+.register.red_bg {
+  transition: all 0.3s ease;
+}
+
+.register.red_bg:hover {
+  background-color: #28a745 !important; /* Green color */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.register.red_bg:hover .register_icon {
+  background-color: #218838 !important; /* Darker green for icon */
+  transform: scale(1.1);
+}
+
+.register.red_bg .register_icon {
+  transition: all 0.3s ease;
+}
+
+.register.red_bg .register_icon.black_hover:hover {
+  background-color: #218838 !important;
+  color: white !important;
+}
+
+.register.red_bg .register_icon.red_hover:hover {
+  background-color: #218838 !important;
+  color: white !important;
+}
+
+/* Score Charts Section */
+.score-charts-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
+}
+
+.score-charts-section .chart-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.score-charts-section .chart-card:hover {
+  transform: translateY(-5px);
+}
+
+.score-charts-section .chart-card .chart-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.score-charts-section .chart-card .chart-icon.success {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+}
+
+.score-charts-section .chart-card .chart-icon.info {
+  background: linear-gradient(45deg, #17a2b8, #6f42c1);
+  color: white;
+}
+
+.score-charts-section .chart-card .chart-icon.warning {
+  background: linear-gradient(45deg, #ffc107, #fd7e14);
+  color: white;
+}
+
+.score-charts-section .chart-card .chart-icon.danger {
+  background: linear-gradient(45deg, #dc3545, #e83e8c);
+  color: white;
+}
+
+.score-charts-section .chart-card .chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.score-charts-section .chart-card .chart-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 5px;
+}
+
+.score-charts-section .chart-card .chart-description {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Awards Section */
+.awards-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  padding: 80px 0;
+  color: white;
+}
+
+.awards-section .award-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.awards-section .award-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.15);
+}
+
+.awards-section .award-card .award-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.awards-section .award-card .award-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.awards-section .award-card .award-description {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.awards-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.awards-section .section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.awards-section .section-title p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Progress Charts */
+.progress-chart {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.progress-chart .progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.progress-chart .progress-header .progress-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-chart .progress-header .progress-percentage {
+  font-weight: 700;
+  color: #28a745;
+  transition: all 0.3s ease;
+}
+
+/* Counter animation for percentage numbers */
+@keyframes countUp {
+  from {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.progress-chart.loaded .progress-header .progress-percentage {
+  animation: countUp 0.8s ease-out;
+  color: #28a745;
+  font-weight: 700;
+}
+
+/* Ensure percentage numbers are always visible */
+.progress-chart .progress-header .progress-percentage {
+  min-width: 45px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+  color: #28a745;
+  transition: all 0.3s ease;
+}
+
+.progress-chart .progress-bar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-chart .progress-bar .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%; /* Start at 0% */
+}
+
+/* Progress bar loaded state - when scrolled into view */
+.progress-chart.loaded .progress-bar .progress-fill {
+  width: var(--progress-width) !important; /* Animate to full width when loaded */
+}
+
+/* Hover effect for additional interaction */
+.progress-chart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);
+}
+
+/* Add smooth loading animation for progress bars */
+.progress-chart {
+  transition: all 0.3s ease;
+}
+
+/* Pulse animation for progress bars */
+@keyframes progressPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-chart.loaded .progress-bar .progress-fill {
+  animation: progressPulse 1s ease-in-out;
+}
+
+/* Statistics Cards */
+.stats-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-3px);
+}
+
+.stats-card .stats-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 24px;
+  color: white;
+}
+
+.stats-card .stats-icon.blood-donations {
+  background: linear-gradient(45deg, #dc3545, #e83e8c);
+}
+
+.stats-card .stats-icon.lives-saved {
+  background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.stats-card .stats-icon.volunteers {
+  background: linear-gradient(45deg, #17a2b8, #6f42c1);
+}
+
+.stats-card .stats-icon.hospitals {
+  background: linear-gradient(45deg, #ffc107, #fd7e14);
+}
+
+.stats-card .stats-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.stats-card .stats-label {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .score-charts-section,
+  .awards-section {
+    padding: 50px 0;
+  }
+  
+  .chart-card,
+  .award-card {
+    margin-bottom: 20px;
+  }
+  
+  .awards-section .section-title h2 {
+    font-size: 28px;
+  }
+} 

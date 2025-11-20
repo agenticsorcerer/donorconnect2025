@@ -31,6 +31,10 @@ urlpatterns = [
     path('role/', include('main.urls.role')),
     # Serve static files from frontend/assets
     re_path(r'^assets/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'assets')}),
+    # Serve components directory
+    re_path(r'^components/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'components')}),
+    # Serve js directory
+    re_path(r'^js/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'js')}),
     # Root path
     path('', serve_frontend, kwargs={'path': ''}),
     # Serve frontend HTML files (this should be last to catch all other routes)

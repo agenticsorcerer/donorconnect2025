@@ -61,6 +61,26 @@ def serve_frontend(request, path=''):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
+        
+        # Inject header and footer components if placeholders exist
+        if 'id="header-placeholder"' in content or "id='header-placeholder'" in content:
+            header_path = settings.FRONTEND_DIR / 'components' / 'header.html'
+            if header_path.exists():
+                with open(header_path, 'r', encoding='utf-8') as hf:
+                    header_content = hf.read()
+                # Replace header placeholder with actual header
+                content = content.replace('<div id="header-placeholder"></div>', header_content)
+                content = content.replace("<div id='header-placeholder'></div>", header_content)
+        
+        if 'id="footer-placeholder"' in content or "id='footer-placeholder'" in content:
+            footer_path = settings.FRONTEND_DIR / 'components' / 'footer.html'
+            if footer_path.exists():
+                with open(footer_path, 'r', encoding='utf-8') as ff:
+                    footer_content = ff.read()
+                # Replace footer placeholder with actual footer
+                content = content.replace('<div id="footer-placeholder"></div>', footer_content)
+                content = content.replace("<div id='footer-placeholder'></div>", footer_content)
+        
         return HttpResponse(content, content_type='text/html')
     except Exception as e:
         raise Http404(f"Error reading file: {str(e)}")

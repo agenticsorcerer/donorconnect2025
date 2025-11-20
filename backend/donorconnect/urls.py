@@ -15,15 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
-from main.urls import user
+from django.views.static import serve
+from donorconnect.views import serve_frontend
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls.user')),
-    path('', include('main.urls.role')),
+    # API endpoints - these should come before frontend routes
+    path('api/users/', include('main.urls.user')),
+    path('api/role/', include('main.urls.role')),
+    # Also keep original API paths for backward compatibility
+    path('users/', include('main.urls.user')),
+    path('role/', include('main.urls.role')),
+    # Serve static files from frontend/assets
+    re_path(r'^assets/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'assets')}),
+    # Root path
+    path('', serve_frontend, kwargs={'path': ''}),
+    # Serve frontend HTML files (this should be last to catch all other routes)
+    re_path(r'^(?P<path>.+)$', serve_frontend),
 ]
 
 # Serve media files during development

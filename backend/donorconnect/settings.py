@@ -56,7 +56,7 @@ ROOT_URLCONF = 'donorconnect.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR.parent / 'frontend'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,9 +125,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Frontend static files
+STATICFILES_DIRS = [
+    BASE_DIR.parent / 'frontend' / 'assets',
+]
+
 # Media files (User uploaded content)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Frontend directory
+FRONTEND_DIR = BASE_DIR.parent / 'frontend'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

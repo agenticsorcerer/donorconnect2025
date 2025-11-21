@@ -69,7 +69,7 @@
         <div class="col-xl-8 offset-xl-2">
           <div class="text-center">
             <div class="km__website__title mb-30">
-              <h2>Blood Ai Organization</h2>
+              <h2>Blood  Organization</h2>
             </div>
           </div>
         </div>
@@ -77,276 +77,121 @@
       <div class="row justify-content-center">
         <div class="col-xl-8">
           <div class="km__form__box">
-            <form action="#">
+            <form id="registerForm">
+              <!-- Error/Success Messages -->
+              <div id="formMessage" class="alert" style="display: none; margin-bottom: 20px;"></div>
+              
+              <!-- First Name and Last Name -->
               <div class="row align-items-center mb-20">
                 <div class="col-md-3">
                   <label class="fss-18">Full Name <span>*</span></label>
                 </div>
                 <div class="col-md">
-                  <label class="fs-14">
-                    Name
-                  </label>
-                  <input type="text">
+                  <label class="fs-14">First Name</label>
+                  <input type="text" id="frist_name" name="frist_name" required>
                 </div>
                 <div class="col-md">
-                  <label class="fs-14">
-                    Name
-                  </label>
-                  <input type="text">
+                  <label class="fs-14">Last Name</label>
+                  <input type="text" id="last_name" name="last_name" required>
                 </div>
               </div>
+
+              <!-- Email -->
               <div class="row align-items-center mb-20">
                 <div class="col-md-3">
-                  <label class="fss-18">Date of Birth<span>*</span></label>
+                  <label class="fss-18">Email <span>*</span></label>
                 </div>
-                <div class="col-md">
-                  <label class="d-block fs-14">Month</label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
-                  </select>
-                </div>
-                <div class="col-md">
-                  <label class="d-block fs-14">Day</label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                    <option>28</option>
-                    <option>29</option>
-                    <option>30</option>
-                    <option>31</option>
-                  </select>
-                </div>
-                <div class="col-md">
-                  <label class="d-block fs-14">Year</label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>2000</option>
-                    <option>2001</option>
-                    <option>2002</option>
-                    <option>2003</option>
-                    <option>2004</option>
-                    <option>2005</option>
-                    <option>2007</option>
-                    <option>2008</option>
-                    <option>2009</option>
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                    <option>2017</option>
-                    <option>2018</option>
-                    <option>2019</option>
-                    <option>2020</option>
-                    <option>2021</option>
-                    <option>2022</option>
-                    <option>2023</option>
-                  </select>
+                <div class="col-md-9">
+                  <input type="email" id="email" name="email" required>
                 </div>
               </div>
+
+              <!-- Password -->
               <div class="row align-items-center mb-20">
                 <div class="col-md-3">
-                  <label class="fss-18">BLOOD GROUP<span>*</span></label>
+                  <label class="fss-18">Password <span>*</span></label>
                 </div>
                 <div class="col-md-9">
-                  <select class="nice_select">
-                    <option></option>
-                    <option>A+</option>
-                    <option>A-</option>
-                    <option>B+</option>
-                    <option>B-</option>
-                    <option>AB+</option>
-                    <option>AB-</option>
-                  </select>
+                  <input type="password" id="password" name="password" required>
                 </div>
               </div>
+
+              <!-- Phone Number -->
               <div class="row align-items-center mb-20">
                 <div class="col-md-3">
-                  <label class="fss-18">Last Donate Date</label>
+                  <label class="fss-18">Phone Number</label>
                 </div>
-                <div class="col-md">
-                  <label class="fs-14">
-                    Month
-                  </label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
-                  </select>
-                </div>
-                <div class="col-md">
-                  <label class="fs-14">
-                    Day
-                  </label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                    <option>28</option>
-                    <option>29</option>
-                    <option>30</option>
-                    <option>31</option>
-                  </select>
-                </div>
-                <div class="col-md">
-                  <label class="fs-14">
-                    Year
-                  </label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>2000</option>
-                    <option>2001</option>
-                    <option>2002</option>
-                    <option>2003</option>
-                    <option>2004</option>
-                    <option>2005</option>
-                    <option>2007</option>
-                    <option>2008</option>
-                    <option>2009</option>
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                    <option>2017</option>
-                    <option>2018</option>
-                    <option>2019</option>
-                    <option>2020</option>
-                    <option>2021</option>
-                    <option>2022</option>
-                    <option>2023</option>
-                  </select>
+                <div class="col-md-9">
+                  <input type="text" id="phone_number" name="phone_number">
                 </div>
               </div>
-              <div class="row align-items-center mb-10 g-4">
+
+              <!-- Age -->
+              <div class="row align-items-center mb-20">
                 <div class="col-md-3">
-                  <label class="fss-18">Phone Number<span>*</span></label>
+                  <label class="fss-18">Age <span>*</span></label>
                 </div>
                 <div class="col-md-9">
-                  <label class="fs-14">
-                    Number
-                  </label>
-                  <input type="text">
+                  <input type="number" id="age" name="age" min="18" max="120" required placeholder="Enter your age (must be 18 or older)">
+                  <small class="fs-14 text-muted d-block mt-2">You must be at least 18 years old to register</small>
                 </div>
               </div>
-              <div class="row align-items-center mb-10 g-4">
+
+              <!-- Gender -->
+              <div class="row align-items-center mb-20">
                 <div class="col-md-3">
-                  <label class="fss-18">Address<span>*</span></label>
+                  <label class="fss-18">Gender <span>*</span></label>
                 </div>
                 <div class="col-md-9">
-                  <label class="fs-14">
-                    Street Address
-                  </label>
-                  <input type="text">
-                </div>
-              </div>
-              <div class="row align-items-center mb-10 g-4">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                  <label class="fs-14">City</label>
-                  <input type="text">
-                </div>
-              </div>
-              <div class="row align-items-center mb-10 g-4">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                  <label class="fs-14">State / Province</label>
-                  <input type="text">
-                </div>
-              </div>
-              <div class="row align-items-center mb-10">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                  <label class="fs-14">Country</label>
-                  <select class="nice_select">
-                    <option></option>
-                    <option>BanglaDesh</option>
-                    <option>India</option>
-                    <option>Chaina</option>
+                  <select class="nice_select" id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
+
+              <!-- Role Dropdown -->
+              <div class="row align-items-center mb-20">
+                <div class="col-md-3">
+                  <label class="fss-18">Role <span>*</span></label>
+                </div>
+                <div class="col-md-9">
+                  <select class="nice_select" id="role_id" name="role_id" required>
+                    <option value="">Loading roles...</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Preferred Hospital Dropdown -->
+              <div class="row align-items-center mb-20">
+                <div class="col-md-3">
+                  <label class="fss-18">Preferred Hospital</label>
+                </div>
+                <div class="col-md-9">
+                  <select class="nice_select" id="prefered_hospital_id" name="prefered_hospital_id">
+                    <option value="">Select Hospital (Optional)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Avatar Upload (Optional) -->
+              <div class="row align-items-center mb-20">
+                <div class="col-md-3">
+                  <label class="fss-18">Profile Picture</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="file" id="avatar_url" name="avatar_url" accept="image/*">
+                  <small class="fs-14 text-muted">Optional - Upload your profile picture</small>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
               <div class="row align-items-center g-4">
                 <div class="col-md-3"></div>
                 <div class="col-md-9">
-                  <button type="button" class="km__register__btn pt-3 pb-3 mt-3">
+                  <button type="submit" class="km__register__btn pt-3 pb-3 mt-3" id="submitBtn">
                     Submit
                     <span><i class="fas fa-arrow-right"></i></span>
                   </button>
@@ -486,6 +331,402 @@
   <script src="assets/js/waypoints.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="js/components.js"></script>
+  
+  <script>
+    // API Base URL - adjust if needed
+    const API_BASE_URL = '/api';
+    
+    // Initialize form on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Page loaded, initializing form...');
+      
+      // Wait for jQuery and nice-select to be available
+      if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+        // Initialize all nice-select dropdowns including gender
+        $('.nice_select').niceSelect();
+        console.log('Nice-select initialized for all dropdowns');
+      } else {
+        console.warn('jQuery or nice-select not available');
+      }
+      
+      initializeForm();
+      
+      // Load dropdowns after a short delay to ensure nice-select is initialized
+      setTimeout(() => {
+        console.log('Loading roles and hospitals...');
+        loadRoles();
+        loadHospitals();
+        
+        // Ensure gender dropdown is properly initialized
+        if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+          const genderSelect = $('#gender');
+          if (genderSelect.length && !genderSelect.next('.nice-select').length) {
+            genderSelect.niceSelect();
+            console.log('Gender dropdown initialized');
+          }
+        }
+      }, 200);
+      
+      // Retry loading roles after 1 second if they didn't load
+      setTimeout(() => {
+        const roleSelect = document.getElementById('role_id');
+        if (roleSelect && roleSelect.options.length <= 1) {
+          console.log('Roles not loaded, retrying...');
+          loadRoles();
+        }
+      }, 1000);
+    });
+
+    // Load roles from API
+    async function loadRoles() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/role/`);
+        
+        if (!response.ok) {
+          throw new Error(`Failed to load roles: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        const roleSelect = document.getElementById('role_id');
+        
+        if (!roleSelect) {
+          console.error('Role select element not found');
+          return;
+        }
+        
+        roleSelect.innerHTML = '<option value="">Select Role</option>';
+        
+        let roles = [];
+        if (Array.isArray(data)) {
+          roles = data;
+        } else if (data.results && Array.isArray(data.results)) {
+          // Handle paginated response
+          roles = data.results;
+        }
+        
+        if (roles.length === 0) {
+          roleSelect.innerHTML = '<option value="">No roles available</option>';
+          console.warn('No roles found in API response');
+          return;
+        }
+        
+        roles.forEach(role => {
+          const option = document.createElement('option');
+          option.value = role.role_id;  // Store role_id for submission
+          // Display role_display_name from role API
+          option.textContent = role.role_display_name || role.role_key || `Role ${role.role_id}`;
+          roleSelect.appendChild(option);
+        });
+        
+        // Reinitialize nice-select for roles dropdown
+        if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+          $('#role_id').niceSelect('update');
+        }
+        
+        console.log(`Loaded ${roles.length} roles successfully`);
+      } catch (error) {
+        console.error('Error loading roles:', error);
+        const roleSelect = document.getElementById('role_id');
+        if (roleSelect) {
+          roleSelect.innerHTML = '<option value="">Error loading roles - Click to refresh</option>';
+        }
+        // Don't show error message immediately, let user try to submit
+      }
+    }
+
+    // Load hospitals from API
+    async function loadHospitals() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/preferred-hospitals/`);
+        
+        if (!response.ok) {
+          throw new Error(`Failed to load hospitals: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        const hospitalSelect = document.getElementById('prefered_hospital_id');
+        
+        if (!hospitalSelect) {
+          console.error('Hospital select element not found');
+          return;
+        }
+        
+        hospitalSelect.innerHTML = '<option value="">Select Hospital (Optional)</option>';
+        
+        let hospitals = [];
+        if (Array.isArray(data)) {
+          hospitals = data;
+        } else if (data.results && Array.isArray(data.results)) {
+          // Handle paginated response
+          hospitals = data.results;
+        }
+        
+        if (hospitals.length === 0) {
+          hospitalSelect.innerHTML = '<option value="">No hospitals available</option>';
+          console.warn('No hospitals found in API response');
+          return;
+        }
+        
+        hospitals.forEach(hospital => {
+          const option = document.createElement('option');
+          option.value = hospital.preferred_hospital_id;
+          const displayName = hospital.hospital_name 
+            ? `${hospital.hospital_name}${hospital.city_name ? ' - ' + hospital.city_name : ''}`
+            : `Hospital ${hospital.preferred_hospital_id}`;
+          option.textContent = displayName;
+          hospitalSelect.appendChild(option);
+        });
+        
+        // Reinitialize nice-select for hospitals dropdown
+        if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+          $('#prefered_hospital_id').niceSelect('update');
+        }
+        
+        console.log(`Loaded ${hospitals.length} hospitals successfully`);
+      } catch (error) {
+        console.error('Error loading hospitals:', error);
+        const hospitalSelect = document.getElementById('prefered_hospital_id');
+        if (hospitalSelect) {
+          hospitalSelect.innerHTML = '<option value="">Error loading hospitals</option>';
+        }
+      }
+    }
+
+    // Show message to user
+    function showMessage(message, type = 'info') {
+      const messageDiv = document.getElementById('formMessage');
+      messageDiv.className = `alert alert-${type}`;
+      messageDiv.innerHTML = message; // Use innerHTML to support <br> tags
+      messageDiv.style.display = 'block';
+      
+      // Scroll to message
+      messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
+      // Auto hide after 5 seconds for success messages
+      if (type === 'success') {
+        setTimeout(() => {
+          messageDiv.style.display = 'none';
+        }, 5000);
+      }
+    }
+
+    // Initialize form
+    function initializeForm() {
+      const form = document.getElementById('registerForm');
+      
+      if (!form) {
+        console.error('Form element not found');
+        return;
+      }
+      
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Form submit triggered');
+        
+        // Get form data
+        const formData = new FormData(form);
+        
+        // Prepare data for API - exactly matching User model fields
+        const roleId = formData.get('role_id');
+        const preferedHospitalId = formData.get('prefered_hospital_id');
+        const phoneNumber = formData.get('phone_number');
+        const gender = formData.get('gender');
+        const ageInput = formData.get('age');
+        const avatarFile = document.getElementById('avatar_url').files[0];
+        
+        // Get required fields - matching User model exactly
+        const frist_name = formData.get('frist_name')?.trim();
+        const last_name = formData.get('last_name')?.trim();
+        const email = formData.get('email')?.trim();
+        const password = formData.get('password');
+        
+        // Validate required fields first
+        if (!frist_name || !last_name || !email || !password || !roleId || !gender || !ageInput) {
+          showMessage('Please fill in all required fields (First Name, Last Name, Email, Password, Age, Gender, and Role).', 'danger');
+          return;
+        }
+        
+        // Validate and parse age
+        const age = parseInt(ageInput);
+        if (isNaN(age) || age < 1 || age > 120) {
+          showMessage('Please enter a valid age (between 1 and 120).', 'danger');
+          return;
+        }
+        
+        // Validate age >= 18
+        if (age < 18) {
+          showMessage('You must be at least 18 years old to register. Your age is ' + age + ' years.', 'danger');
+          return;
+        }
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showMessage('Please enter a valid email address.', 'danger');
+          return;
+        }
+        
+        // Build userData object matching User model fields exactly
+        const userData = {
+          frist_name: frist_name,           // CharField - required
+          last_name: last_name,             // CharField - required
+          email: email,                     // EmailField - required, unique
+          password: password,               // CharField - required
+          age: age,                         // IntegerField - required
+          gender: gender.trim(),            // CharField - required
+        };
+        
+        // Add optional fields matching User model
+        // phone_number: CharField(max_length=20, null=True, blank=True)
+        if (phoneNumber && phoneNumber.trim()) {
+          userData.phone_number = phoneNumber.trim();
+        }
+        
+        // role: ForeignKey(role, db_column='role_id', null=True, blank=True)
+        // DRF expects the model field name 'role' with the ID value (integer)
+        if (roleId && roleId.trim()) {
+          const roleIdInt = parseInt(roleId);
+          if (isNaN(roleIdInt)) {
+            showMessage('Invalid role selected. Please select a valid role.', 'danger');
+            return;
+          }
+          userData.role = roleIdInt;
+        }
+        
+        // prefered_hospital_id: IntegerField(null=True, blank=True)
+        if (preferedHospitalId && preferedHospitalId.trim()) {
+          userData.prefered_hospital_id = parseInt(preferedHospitalId);
+        }
+        
+        // avatar_url: ImageField(upload_to='avatars/', null=True, blank=True)
+        // Will be handled separately in FormData if file is uploaded
+        
+        // Disable submit button
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting... <span><i class="fas fa-spinner fa-spin"></i></span>';
+        
+        try {
+          // Prepare data for API - handle file upload if avatar is selected
+          let finalData;
+          let headers = {};
+          
+          if (avatarFile) {
+            // If avatar is uploaded, use FormData (multipart/form-data)
+            const uploadFormData = new FormData();
+            // Add all userData fields to FormData
+            Object.keys(userData).forEach(key => {
+              const value = userData[key];
+              // Convert integers to strings for FormData (FormData only accepts strings/files)
+              if (typeof value === 'number') {
+                uploadFormData.append(key, value.toString());
+              } else if (value !== null && value !== undefined) {
+                uploadFormData.append(key, value);
+              }
+            });
+            uploadFormData.append('avatar_url', avatarFile);
+            finalData = uploadFormData;
+            // Don't set Content-Type header - browser will set it with boundary for FormData
+          } else {
+            // Otherwise, send JSON
+            headers = {
+              'Content-Type': 'application/json',
+            };
+            finalData = JSON.stringify(userData);
+          }
+          
+          console.log('Submitting user data:', userData);
+          console.log('Final data type:', avatarFile ? 'FormData' : 'JSON');
+          if (!avatarFile) {
+            console.log('JSON string:', finalData);
+          }
+          
+          const response = await fetch(`${API_BASE_URL}/users/`, {
+            method: 'POST',
+            headers: headers,
+            body: finalData
+          });
+          
+          let result;
+          try {
+            result = await response.json();
+          } catch (e) {
+            console.error('Error parsing response:', e);
+            showMessage('Server response error. Please try again.', 'danger');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit <span><i class="fas fa-arrow-right"></i></span>';
+            return;
+          }
+          
+          console.log('API Response:', result);
+          
+          if (response.ok || response.status === 201) {
+            // Standard ModelViewSet create returns the created object
+            showMessage('User registered successfully! Redirecting...', 'success');
+            
+            // Reset form
+            form.reset();
+            
+            // Reload dropdowns to reset their state
+            setTimeout(() => {
+              loadRoles();
+              loadHospitals();
+            }, 100);
+            
+            // Redirect to index.html after 2 seconds
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 2000);
+          } else {
+            // Handle errors - show detailed validation errors
+            let errorMessage = 'Registration failed. Please try again.';
+            let errorDetails = '';
+            
+            if (result.errors) {
+              // Show detailed field errors
+              const errorList = Object.entries(result.errors).map(([key, value]) => {
+                if (Array.isArray(value)) {
+                  return `${key}: ${value.join(', ')}`;
+                } else if (typeof value === 'object') {
+                  return `${key}: ${JSON.stringify(value)}`;
+                }
+                return `${key}: ${value}`;
+              }).join('<br>');
+              errorDetails = errorList;
+              console.error('Validation errors:', result.errors);
+            }
+            
+            if (result.detail) {
+              errorMessage = result.detail;
+            } else if (result.message) {
+              errorMessage = result.message;
+            } else if (result.error) {
+              errorMessage = result.error;
+            }
+            
+            // Show combined error message
+            if (errorDetails) {
+              showMessage(errorMessage + '<br><br>Details:<br>' + errorDetails, 'danger');
+            } else {
+              showMessage(errorMessage, 'danger');
+            }
+            
+            // Re-enable submit button on error
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit <span><i class="fas fa-arrow-right"></i></span>';
+          }
+        } catch (error) {
+          console.error('Registration error:', error);
+          showMessage('An error occurred. Please check your connection and try again. Error: ' + error.message, 'danger');
+          // Re-enable submit button on error
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit <span><i class="fas fa-arrow-right"></i></span>';
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

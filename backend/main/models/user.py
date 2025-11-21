@@ -11,6 +11,8 @@ class User(models.Model):
     prefered_hospital_id = models.IntegerField(null=True, blank=True)
     avatar_url = models.ImageField(upload_to='avatars/', null=True, blank=True)
     role = models.ForeignKey(role, on_delete=models.SET_NULL, null=True, blank=True, db_column='role_id')
+    age = models.IntegerField()  # Required field for age
+    gender = models.CharField(max_length=20)  # Required field for gender
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

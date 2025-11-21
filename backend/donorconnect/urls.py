@@ -26,10 +26,13 @@ urlpatterns = [
     # API endpoints - these should come before frontend routes
     path('api/users/', include('main.urls.user')),
     path('api/role/', include('main.urls.role')),
-    # Also keep original API paths for backward compatibility
-    path('users/', include('main.urls.user')),
-    path('role/', include('main.urls.role')),
-    # Serve static files from frontend/assets
+    path('api/donation-requests/', include('main.urls.donation_request')),# Also keep original API paths for backward compatibility
+    path('api/donation-types/', include('main.urls.donation_type')),
+    path('api/donor-profiles/', include('main.urls.donor_profile')),
+    path('api/notification-types/', include('main.urls.notification_type')),
+    path('api/notifications/', include('main.urls.notifications')),
+    path('api/preferred-hospitals/', include('main.urls.preferred_hospital')),
+        # Serve static files from frontend/assets
     re_path(r'^assets/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'assets')}),
     # Serve components directory
     re_path(r'^components/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'components')}),

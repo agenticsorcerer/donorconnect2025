@@ -17,6 +17,38 @@
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <!-- Custom styles for form validation and dropdown fixes -->
+  <style>
+    /* Ensure nice-select dropdowns are visible and functional */
+    .nice-select {
+      display: block !important;
+      width: 100% !important;
+      cursor: pointer !important;
+    }
+    
+    /* Hide the original select but keep it accessible */
+    select.nice_select {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      left: -9999px;
+    }
+    
+    /* Red asterisk for required fields */
+    label span {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    /* Ensure gender dropdown wrapper is visible */
+    #gender + .nice-select {
+      display: block !important;
+      visibility: visible !important;
+    }
+  </style>
+
   <!--favicon-->
   <link rel="icon" href="assets/images/favicon.png">
 
@@ -340,13 +372,42 @@
     document.addEventListener('DOMContentLoaded', function() {
       console.log('Page loaded, initializing form...');
       
-      // Wait for jQuery and nice-select to be available
-      if (typeof $ !== 'undefined' && $.fn.niceSelect) {
-        // Initialize all nice-select dropdowns including gender
-        $('.nice_select').niceSelect();
-        console.log('Nice-select initialized for all dropdowns');
-      } else {
-        console.warn('jQuery or nice-select not available');
+      // Function to initialize nice-select dropdowns
+      function initNiceSelect() {
+        if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+          // Initialize all nice-select dropdowns
+          $('.nice_select').niceSelect();
+          console.log('Nice-select initialized for all dropdowns');
+          
+          // Double-check gender dropdown specifically
+          const genderSelect = $('#gender');
+          if (genderSelect.length) {
+            // Check if nice-select wrapper exists
+            if (!genderSelect.next('.nice-select').length) {
+              console.log('Gender dropdown not initialized, reinitializing...');
+              genderSelect.niceSelect();
+            } else {
+              console.log('Gender dropdown is properly initialized');
+            }
+          } else {
+            console.error('Gender select element not found!');
+          }
+          
+          return true;
+        } else {
+          console.warn('jQuery or nice-select not available yet');
+          return false;
+        }
+      }
+      
+      // Try to initialize immediately
+      let initialized = initNiceSelect();
+      
+      // If not initialized, retry after a short delay
+      if (!initialized) {
+        setTimeout(() => {
+          initNiceSelect();
+        }, 100);
       }
       
       initializeForm();
@@ -357,15 +418,36 @@
         loadRoles();
         loadHospitals();
         
-        // Ensure gender dropdown is properly initialized
+        // Final check and reinitialize gender if needed
         if (typeof $ !== 'undefined' && $.fn.niceSelect) {
           const genderSelect = $('#gender');
-          if (genderSelect.length && !genderSelect.next('.nice-select').length) {
-            genderSelect.niceSelect();
-            console.log('Gender dropdown initialized');
+          if (genderSelect.length) {
+            const niceSelectWrapper = genderSelect.next('.nice-select');
+            if (!niceSelectWrapper.length) {
+              console.log('Gender dropdown still not initialized, forcing initialization...');
+              genderSelect.niceSelect();
+              
+              // Verify it was created
+              setTimeout(() => {
+                const wrapper = genderSelect.next('.nice-select');
+                if (wrapper.length) {
+                  console.log('✓ Gender dropdown successfully initialized');
+                } else {
+                  console.error('✗ Gender dropdown failed to initialize - checking DOM...');
+                  console.log('Gender select element:', genderSelect[0]);
+                  console.log('Gender select parent:', genderSelect.parent());
+                }
+              }, 100);
+            } else {
+              // Update it to ensure it's working
+              genderSelect.niceSelect('update');
+              console.log('✓ Gender dropdown verified and updated');
+            }
+          } else {
+            console.error('Gender select element not found in DOM!');
           }
         }
-      }, 200);
+      }, 300);
       
       // Retry loading roles after 1 second if they didn't load
       setTimeout(() => {
@@ -375,6 +457,52 @@
           loadRoles();
         }
       }, 1000);
+      
+      // Final safety check for gender dropdown after 1.5 seconds
+      setTimeout(() => {
+        if (typeof $ !== 'undefined' && $.fn.niceSelect) {
+          const genderSelect = $('#gender');
+          const genderElement = document.getElementById('gender');
+          
+          if (genderElement) {
+            const niceSelectWrapper = genderSelect.next('.nice-select');
+            if (!niceSelectWrapper.length) {
+              console.warn('Gender dropdown still not showing - attempting manual fix...');
+              
+              // Try destroying and recreating
+              try {
+                genderSelect.niceSelect('destroy');
+              } catch(e) {
+                console.log('No existing nice-select to destroy');
+              }
+              
+              // Force reinitialize
+              genderSelect.niceSelect();
+              
+              // Check again after a moment
+              setTimeout(() => {
+                const wrapper = genderSelect.next('.nice-select');
+                if (wrapper.length) {
+                  console.log('✓ Gender dropdown fixed and now visible');
+                } else {
+                  console.error('✗ Gender dropdown still not working - please check browser console for errors');
+                  // Show the original select as fallback
+                  genderElement.style.position = 'relative';
+                  genderElement.style.opacity = '1';
+                  genderElement.style.width = '100%';
+                  genderElement.style.height = 'auto';
+                  genderElement.style.visibility = 'visible';
+                  genderElement.style.pointerEvents = 'auto';
+                  genderElement.style.left = '0';
+                  console.log('Fallback: Showing original select element');
+                }
+              }, 200);
+            } else {
+              console.log('✓ Gender dropdown is working correctly');
+            }
+          }
+        }
+      }, 1500);
     });
 
     // Load roles from API

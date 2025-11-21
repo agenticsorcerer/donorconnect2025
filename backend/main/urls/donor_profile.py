@@ -3,7 +3,7 @@ from django.urls import path, include
 from main.views.donor_profile import DonorProfileView
 
 router = DefaultRouter()
-router.register(r'donor-profiles', DonorProfileView, basename='donor-profile')
+router.register(r'', DonorProfileView, basename='donor-profile')
 
 urlpatterns = [
     path('', include(router.urls)),

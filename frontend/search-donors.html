@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Donors - Donor Connect</title>
+
+  <!--Essential css files-->
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/fancybox.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.png">
+
+  <style>
+    .donor-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+    .donor-card:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .donor-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+    }
+    .blood-group-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: #dc3545;
+      color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .availability-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .availability-badge.available {
+      background: #28a745;
+      color: white;
+    }
+    .availability-badge.unavailable {
+      background: #6c757d;
+      color: white;
+    }
+    .search-section {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .results-section {
+      margin-top: 30px;
+    }
+    .no-results {
+      text-align: center;
+      padding: 50px;
+      color: #6c757d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--preloader start-->
+  <div class="preloader">
+    <h1>Donnor Connect</h1>
+    <div class="preload-progress">
+      <span></span>
+    </div>
+  </div>
+  <!--preloader end-->
+
+  <!-- scroll to top -->
+  <div class="progress-wrap cursor-pointer active-progress">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+        style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 221.377;">
+      </path>
+    </svg>
+  </div>
+  <!-- scroll to top -->
+
+  <!-- header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- breadcrumb start -->
+  <div class="breadcrumb_section overflow-hidden ptb-150">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumb_content text-center">
+            <h2 class="breadcrumb_title">Search Donors</h2>
+            <p class="breadcrumb_text">Find available donors by city, blood group, and hospital</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- breadcrumb end -->
+
+  <!-- Search Section -->
+  <section class="ptb-100">
+    <div class="container">
+      <div class="search-section">
+        <h3 class="mb-4">Search Donors</h3>
+        <form id="searchDonorsForm">
+          <div class="row g-4">
+            <!-- City -->
+            <div class="col-md-4">
+              <label class="fss-18 mb-2">City</label>
+              <input type="text" id="searchCity" name="city" class="form-control" placeholder="Enter city name">
+            </div>
+
+            <!-- Blood Group -->
+            <div class="col-md-4">
+              <label class="fss-18 mb-2">Blood Group</label>
+              <select class="nice_select form-control" id="searchBloodGroup" name="blood_group">
+                <option value="">All Blood Groups</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <!-- Preferred Hospital -->
+            <div class="col-md-4">
+              <label class="fss-18 mb-2">Preferred Hospital</label>
+              <select class="nice_select form-control" id="searchHospital" name="preferred_hospital_id">
+                <option value="">All Hospitals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 text-center">
+              <button type="submit" class="km__register__btn pt-3 pb-3 px-5" id="searchBtn">
+                Search Donors
+                <span><i class="fas fa-search"></i></span>
+              </button>
+              <button type="button" class="btn btn-secondary pt-3 pb-3 px-5 ms-3" id="resetBtn">
+                Reset
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-section">
+        <div id="searchResults"></div>
+        <div id="loadingIndicator" style="display: none; text-align: center; padding: 20px;">
+          <i class="fas fa-spinner fa-spin fa-2x"></i>
+          <p>Searching donors...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Menu -->
+  <div class="offcanvas offcanvas-start" id="offcanvas-mobile">
+    <div class="offcanvas-body">
+      <div class="mobile-menu">
+        <a href="#" class="logo py-3"><img src="assets/images/icon/red-logo.png" alt="logo" class="img-fluid"></a>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+
+        <ul class="accordion accordion-flush mobile_dropdown" id="accordionFlushExample">
+          <li class="accordion-item">
+            <h2>
+              <button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false">
+                Home
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <a href="index.html">Home</a>
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <h2><a href="about.html">About</a></h2>
+          </li>
+          <li class="accordion-item">
+            <h2><a href="search-donors.html">Search Donors</a></h2>
+          </li>
+          <li class="accordion-item">
+            <h2><a href="campaign-details.html">Campaign</a></h2>
+          </li>
+          <li class="accordion-item">
+            <h2><a href="blog-details.html">Blog</a></h2>
+          </li>
+          <li class="accordion-item">
+            <h2><a href="contact.html">Contact</a></h2>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Javascript Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/fancybox.js"></script>
+  <script src="assets/js/counterup.min.js"></script>
+  <script src="assets/js/progress-bar.js"></script>
+  <script src="assets/js/smooth-scroll.min.js"></script>
+  <script src="assets/js/nice-select.js"></script>
+  <script src="assets/js/waypoints.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/search-donors.js"></script>
+</body>
+
+</html>
+

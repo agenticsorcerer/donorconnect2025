@@ -13,6 +13,7 @@ class User(models.Model):
     role = models.ForeignKey(role, on_delete=models.SET_NULL, null=True, blank=True, db_column='role_id')
     age = models.IntegerField()  # Required field for age
     gender = models.CharField(max_length=20)  # Required field for gender
+    is_active = models.BooleanField(default=True)  # User account active status
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

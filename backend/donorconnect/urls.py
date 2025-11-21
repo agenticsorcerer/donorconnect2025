@@ -24,6 +24,7 @@ from donorconnect.views import serve_frontend
 urlpatterns = [
     path('admin/', admin.site.urls),
     # API endpoints - these should come before frontend routes
+    path('api/login/', include('main.urls.login')),
     path('api/users/', include('main.urls.user')),
     path('api/role/', include('main.urls.role')),
     path('api/donation-requests/', include('main.urls.donation_request')),# Also keep original API paths for backward compatibility

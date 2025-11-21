@@ -76,6 +76,7 @@
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
     }
+    
   </style>
 </head>
 
@@ -1590,22 +1591,7 @@
     </style>
 
     <script>
-      // List of tags you want to animate
-      const tags = ['div', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'li', 'a', 'section', 'article'];
-      let delay = 0.1;
       document.addEventListener('DOMContentLoaded', function() {
-        tags.forEach(tag => {
-          document.querySelectorAll(tag).forEach(el => {
-            if (!el.classList.contains('wow')) {
-              el.classList.add('wow', 'fadeInUp');
-              el.setAttribute('data-wow-delay', delay.toFixed(1) + 's');
-              delay += 0.1;
-              if (delay > 1.5) delay = 0.1; // Reset after 1.5s for variety
-            }
-          });
-        });
-        new WOW().init();
-        
         // Progress bar scroll animation
         const progressCharts = document.querySelectorAll('.progress-chart');
         
@@ -1657,7 +1643,7 @@
           });
           
           card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.style.transform = 'translateY(0) scale(0.1)';
           });
         });
         
@@ -1665,11 +1651,11 @@
         const campaignCards = document.querySelectorAll('.campaign-card');
         campaignCards.forEach(card => {
           card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.transform = 'translateY(-10px) scale(0.5)';
           });
           
           card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.style.transform = 'translateY(0) scale(0.1)';
           });
         });
         
@@ -1677,11 +1663,11 @@
         const bloodRequestCards = document.querySelectorAll('.blood-request-card');
         bloodRequestCards.forEach(card => {
           card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
+            this.style.transform = 'translateY(-5px) scale(0.5)';
           });
           
           card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.transform = 'translateY(0) scale(0.1)';
           });
         });
         
@@ -1689,11 +1675,11 @@
         const successStoryCards = document.querySelectorAll('.success-story-card');
         successStoryCards.forEach(card => {
           card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
+            this.style.transform = 'translateY(-10px) scale(0.5)';
           });
           
           card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.transform = 'translateY(0) scale(0.1)';
           });
         });
       });

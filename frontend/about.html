@@ -587,21 +587,7 @@
 
   <script>
     // Enhanced animation for better user experience
-    const tags = ['div', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'li', 'a', 'section', 'article'];
-    let delay = 0.1;
     document.addEventListener('DOMContentLoaded', function() {
-      tags.forEach(tag => {
-        document.querySelectorAll(tag).forEach(el => {
-          if (!el.classList.contains('wow')) {
-            el.classList.add('wow', 'fadeInUp');
-            el.setAttribute('data-wow-delay', delay.toFixed(1) + 's');
-            delay += 0.1;
-            if (delay > 1.5) delay = 0.1;
-          }
-        });
-      });
-      new WOW().init();
-      
       // Add staggered animation for volunteer cards
       const volunteerCards = document.querySelectorAll('.volunteer-card');
       volunteerCards.forEach((card, index) => {

@@ -202,12 +202,12 @@
     // Preloader with fallback
     setTimeout(() => {
         $('.preloader').fadeOut()
-    }, 2000);
+    }, 500);
     
-    // Fallback preloader removal after 5 seconds
+    // Fallback preloader removal after 1 second
     setTimeout(() => {
         $('.preloader').fadeOut()
-    }, 5000);
+    }, 1000);
 
 
 

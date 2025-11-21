@@ -1760,8 +1760,8 @@ header .header_top .header_top_content a {
   display: inline-block;
   border-radius: 30px;
   background-color: var(--primary-color);
-  -webkit-animation: 2s loading;
-  animation: 2s loading;
+  -webkit-animation: 0.5s loading;
+  animation: 0.5s loading;
 }
 
 @keyframes loading {

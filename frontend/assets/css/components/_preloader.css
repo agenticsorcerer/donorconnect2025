@@ -32,5 +32,5 @@
       display: inline-block;
       border-radius: 30px;
       background-color: var(--primary-color);
-      -webkit-animation: 6s loading;
-      animation: 6s loading; }
+      -webkit-animation: 0.5s loading;
+      animation: 0.5s loading; }

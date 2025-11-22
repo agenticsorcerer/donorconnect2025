@@ -1,21 +1,119 @@
 // API Base URL
 const API_BASE_URL = '/api';
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Search Donors page loaded');
-  
-  // Initialize nice-select
-  if (typeof $ !== 'undefined' && $.fn.niceSelect) {
-    $('.nice_select').niceSelect();
+// Flag to prevent multiple initializations
+let bloodGroupInitialized = false;
+let pageInitialized = false;
+
+// Initialize on page load - ONLY ONCE
+$(document).ready(function() {
+  if (pageInitialized) {
+    console.log('⚠️ Page already initialized, skipping...');
+    return;
+  }
+  pageInitialized = true;
+  console.log('✅ Search Donors page loaded');
+  initializePage();
+});
+
+function initializePage() {
+  // Initialize blood group dropdown ONCE
+  if (!bloodGroupInitialized) {
+    ensureBloodGroupOptions();
   }
   
-  // Load hospitals
+  // Wait a bit for other scripts, then do other initializations
+  setTimeout(function() {
+    loadHospitals();
+    initializeSearchForm();
+  }, 500);
+}
+
+function initializePageWithoutJQuery() {
+  console.log('Initializing without jQuery');
+  ensureBloodGroupOptions();
   loadHospitals();
-  
-  // Initialize form
   initializeSearchForm();
-});
+}
+
+// Ensure blood group dropdown has options - SIMPLE NATIVE SELECT VERSION (RUNS ONLY ONCE)
+function ensureBloodGroupOptions() {
+  // Prevent multiple calls
+  if (bloodGroupInitialized) {
+    console.log('⚠️ Blood group already initialized, skipping...');
+    return;
+  }
+  
+  console.log('=== Ensuring Blood Group Options (Native Select) ===');
+  
+  const bloodGroupSelect = document.getElementById('searchBloodGroup');
+  if (!bloodGroupSelect) {
+    console.error('❌ Blood group select element not found');
+    // Don't retry - just return
+    return;
+  }
+  
+  console.log('✅ Blood group select element found');
+  
+  // Blood groups data
+  const bloodGroups = [
+    { value: '', text: 'All Blood Groups' },
+    { value: 'A+', text: 'A+' },
+    { value: 'A-', text: 'A-' },
+    { value: 'B+', text: 'B+' },
+    { value: 'B-', text: 'B-' },
+    { value: 'O+', text: 'O+' },
+    { value: 'O-', text: 'O-' },
+    { value: 'AB+', text: 'AB+' },
+    { value: 'AB-', text: 'AB-' }
+  ];
+  
+  // Check current options
+  const currentOptions = bloodGroupSelect.querySelectorAll('option');
+  console.log('📋 Current options count:', currentOptions.length);
+  
+  // If options are missing or wrong, repopulate
+  if (currentOptions.length !== 9) {
+    console.log('🔄 Repopulating options...');
+    bloodGroupSelect.innerHTML = '';
+    
+    bloodGroups.forEach(bg => {
+      const option = document.createElement('option');
+      option.value = bg.value;
+      option.textContent = bg.text;
+      bloodGroupSelect.appendChild(option);
+    });
+    
+    console.log('✅ Repopulated with', bloodGroups.length, 'options');
+  }
+  
+  // Make sure select is visible and styled properly
+  bloodGroupSelect.style.display = 'block';
+  bloodGroupSelect.style.visibility = 'visible';
+  bloodGroupSelect.style.opacity = '1';
+  
+  // Remove any nice-select wrapper if it exists (we're using native select)
+  if (typeof $ !== 'undefined') {
+    const $select = $('#searchBloodGroup');
+    if ($select.next('.nice-select').length) {
+      console.log('🗑️ Removing nice-select wrapper (using native select)');
+      try {
+        $select.niceSelect('destroy');
+      } catch(e) {
+        $select.next('.nice-select').remove();
+      }
+    }
+    // Ensure native select is visible
+    $select.css('display', 'block');
+  }
+  
+  // Mark as initialized to prevent future calls
+  bloodGroupInitialized = true;
+  
+  // Verify final options
+  const finalOptions = bloodGroupSelect.querySelectorAll('option');
+  console.log('✅ Blood group dropdown initialized with', finalOptions.length, 'options');
+}
 
 // Load hospitals from API
 async function loadHospitals() {
@@ -166,7 +264,6 @@ function displayDonorResults(donors) {
   `;
   
   donors.forEach(donor => {
-    const avatarUrl = donor.user_avatar || 'assets/images/default-avatar.png';
     const userName = donor.user_name || 'Anonymous';
     const userEmail = donor.user_email || 'N/A';
     const userPhone = donor.user_phone || 'N/A';
@@ -182,11 +279,24 @@ function displayDonorResults(donors) {
     const availability = donor.availability ? 'Available' : 'Not Available';
     const availabilityClass = donor.availability ? 'available' : 'unavailable';
     
+    // Create unique ID for this image
+    const imageId = 'avatar-' + Math.random().toString(36).substr(2, 9);
+    
+    // Always show placeholder first, then try to load image
+    const avatarUrl = donor.user_avatar || '';
+    const hasAvatar = avatarUrl && avatarUrl.trim() !== '';
+    
     html += `
       <div class="col-md-6 col-lg-4">
         <div class="donor-card">
           <div class="d-flex align-items-start mb-3">
-            <img src="${avatarUrl}" alt="${userName}" class="donor-avatar me-3" onerror="this.src='assets/images/default-avatar.png'">
+            <div class="donor-avatar me-3" style="width: 80px; height: 80px; border-radius: 50%; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; border: 3px solid var(--primary-color, #dc3545); position: relative;">
+              ${hasAvatar ? 
+                `<img id="${imageId}" src="${avatarUrl}" alt="${userName}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; position: absolute; top: 0; left: 0; display: none;" onload="this.style.display='block'; this.parentElement.querySelector('i').style.display='none';" onerror="this.onerror=null; this.src=''; this.style.display='none'; return false;">` : 
+                ''
+              }
+              <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
+            </div>
             <div class="flex-grow-1">
               <h5 class="mb-1">${userName}</h5>
               <p class="text-muted mb-1 small">
@@ -251,6 +361,8 @@ function displayNoResults() {
     </div>
   `;
 }
+
+// REMOVED handleImageError function - using inline onerror that stops immediately
 
 // Contact donor function
 function contactDonor(email, phone) {

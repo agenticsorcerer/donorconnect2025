@@ -195,8 +195,8 @@
 
 
 
-    //nice select
-    $('.nice_select').niceSelect();
+    //nice select - exclude searchBloodGroup as it's initialized manually
+    $('.nice_select').not('#searchBloodGroup').niceSelect();
 
 
     // Preloader with fallback

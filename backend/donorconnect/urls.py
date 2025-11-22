@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/notifications/', include('main.urls.notifications')),
     path('api/preferred-hospitals/', include('main.urls.preferred_hospital')),
     path('api/contact/', include('main.urls.contact')),
+    path('api/donate/', include('main.urls.donate')),
         # Serve static files from frontend/assets
     re_path(r'^assets/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'assets')}),
     # Serve components directory

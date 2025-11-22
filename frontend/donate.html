@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donnor Connect</title>
+  <title>Donate Now - Donor Connect | Blood Donation Services</title>
 
   <!--Essential css files-->
   <link rel="stylesheet" href="assets/css/all.css">
@@ -24,7 +24,7 @@
 <body>
   <!--preloader start-->
   <div class="preloader">
-    <h1>Donnor Connect</h1>
+    <h1>Donor Connect</h1>
     <div class="preload-progress">
       <span></span>
     </div>
@@ -51,7 +51,7 @@
         <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12 text-center">
           <h2>Donate Now</h2>
           <ul>
-            <li><a href=" #">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li class="active">Donate Now</li>
           </ul>
         </div>
@@ -74,16 +74,16 @@
           <div class="km__nice__select">
             <h6 class="mb-30">Your Blood Donation</h6>
             <div class="select__box">
-              <select class="nice_select">
-                <option date-display="select">Enter Your Donate Blood Group</option>
-                <option value="1">A +</option>
-                <option value="2">A -</option>
-                <option value="3">B +</option>
-                <option value="4">B -</option>
-                <option value="4">O +</option>
-                <option value="4">O -</option>
-                <option value="5">AB +</option>
-                <option value="6">AB -</option>
+              <select class="nice_select" id="bloodGroup" name="bloodGroup" required>
+                <option value="">Enter Your Donate Blood Group</option>
+                <option value="A+">A +</option>
+                <option value="A-">A -</option>
+                <option value="B+">B +</option>
+                <option value="B-">B -</option>
+                <option value="O+">O +</option>
+                <option value="O-">O -</option>
+                <option value="AB+">AB +</option>
+                <option value="AB-">AB -</option>
               </select>
             </div>
           </div>
@@ -94,29 +94,31 @@
           <div class="km__donate__form">
             <h6 class="mb-30">Details</h6>
             <div class="km__form__donat">
-              <form action="#">
+              <form id="donateForm">
                 <div class="row g-4">
                   <div class="col-12 col-sm-6">
-                    <input type="text" placeholder="Frist Name">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                   </div>
                   <div class="col-12 col-sm-6">
-                    <input type="text" placeholder="Last Name">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                   </div>
                 </div>
                 <div class="row g-4">
                   <div class="col-12 col-sm-6">
-                    <input type="email" placeholder="Email">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                   </div>
                   <div class="col-12 col-sm-6">
-                    <input type="text" placeholder="Adress">
+                    <input type="text" id="address" name="address" placeholder="Address" required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <textarea placeholder="Case Description..." rows="5"></textarea>
+                    <textarea id="caseDescription" name="caseDescription" placeholder="Case Description..." rows="5" required></textarea>
                   </div>
                 </div>
-                <button type="submit" class="primary__btn border-0">Donate Now</button>
+                <button type="submit" class="primary__btn border-0" id="donateSubmitBtn">
+                  <span>Donate Now</span>
+                </button>
               </form>
             </div>
           </div>
@@ -252,6 +254,80 @@
   <script src="assets/js/waypoints.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="js/components.js"></script>
+  
+  <!-- Donate Form Submission -->
+  <script>
+    document.getElementById('donateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const bloodGroup = document.getElementById('bloodGroup').value;
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const caseDescription = document.getElementById('caseDescription').value.trim();
+      
+      // Validation
+      if (!bloodGroup || !firstName || !lastName || !email || !address || !caseDescription) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Get submit button and update UI
+      const submitBtn = document.getElementById('donateSubmitBtn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>Sending...</span><i class="fa fa-spinner fa-spin ms-2"></i>';
+      submitBtn.disabled = true;
+      
+      // Prepare form data
+      const formData = {
+        bloodGroup: bloodGroup,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        address: address,
+        caseDescription: caseDescription
+      };
+      
+      // Send data to backend API
+      fetch('/api/donate/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.message || 'Thank you for your donation request! We will contact you soon.');
+          document.getElementById('donateForm').reset();
+          // Reset blood group select
+          if (typeof $ !== 'undefined' && $('.nice_select').length) {
+            $('.nice_select').niceSelect('update');
+          }
+        } else {
+          alert(data.message || 'There was an error sending your donation request. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your donation request. Please check your internet connection and try again.');
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      });
+    });
+  </script>
 </body>
 
 </html>

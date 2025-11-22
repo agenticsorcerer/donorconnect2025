@@ -171,7 +171,7 @@
                 </div>
                 <div class="row g-3 mt-3">
                   <div class="col-12">
-                    <div class="form-check">
+                    <div class="form-check privacy-checkbox">
                       <input class="form-check-input" type="checkbox" id="privacy" required>
                       <label class="form-check-label" for="privacy">
                         I agree to the <a href="privacypolicy.html" class="text-primary">Privacy Policy</a> and consent to being contacted regarding my inquiry.
@@ -449,6 +449,29 @@
     @keyframes emergencyBg {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
+    }
+    
+    /* Privacy Checkbox Styles - Smaller and inline */
+    .privacy-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .privacy-checkbox .form-check-input {
+      width: 16px !important;
+      height: 16px !important;
+      margin-top: 0;
+      margin-right: 0;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    
+    .privacy-checkbox .form-check-label {
+      margin-left: 0;
+      cursor: pointer;
+      line-height: 1.5;
+      font-size: 14px;
     }
   </style>
 

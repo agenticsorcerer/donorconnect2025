@@ -35,6 +35,9 @@ def contact_form_view(request):
         # Get recipient email from settings (your email)
         recipient_email = getattr(settings, 'CONTACT_EMAIL', settings.DEFAULT_FROM_EMAIL)
         
+        # Professional sender name
+        from_email_display = f"Donor Connect <{settings.DEFAULT_FROM_EMAIL}>"
+        
         # Subject mapping
         subject_map = {
             'blood-donation': 'Blood Donation Inquiry',
@@ -66,7 +69,7 @@ This email was sent from the Donor Connect contact form.
             send_mail(
                 subject=email_subject,
                 message=email_body,
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                from_email=from_email_display,
                 recipient_list=[recipient_email],
                 fail_silently=False,
             )
@@ -90,7 +93,7 @@ Donor Connect Team
             send_mail(
                 subject=confirmation_subject,
                 message=confirmation_body,
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                from_email=from_email_display,
                 recipient_list=[user_email],
                 fail_silently=False,
             )

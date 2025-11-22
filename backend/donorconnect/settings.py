@@ -152,7 +152,7 @@ EMAIL_HOST = 'smtp.gmail.com'  # For Gmail. Change if using different provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'fiazmallana599@gmail.com'  # YOUR EMAIL ADDRESS (e.g., 'yourname@gmail.com')
-EMAIL_HOST_PASSWORD = 'erkj texv ajmt pjht'  # ⚠️ REPLACE WITH GMAIL APP PASSWORD (not regular password!)
+EMAIL_HOST_PASSWORD = 'erkjtexvajmtpjht'  # ⚠️ Gmail App Password (spaces removed)
 # Get App Password from: https://myaccount.google.com/apppasswords
 # See GMAIL_APP_PASSWORD_GUIDE.md for step-by-step instructions
 DEFAULT_FROM_EMAIL = 'fiazmallana599@gmail.com'  # YOUR EMAIL ADDRESS (same as EMAIL_HOST_USER)

@@ -141,3 +141,21 @@ FRONTEND_DIR = BASE_DIR.parent / 'frontend'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email Configuration
+# IMPORTANT: Replace these with your actual email credentials
+# For Gmail, you may need to use an "App Password" instead of your regular password
+# Go to: Google Account > Security > 2-Step Verification > App Passwords
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # For Gmail. Change if using different provider
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'fiazmallana599@gmail.com'  # YOUR EMAIL ADDRESS (e.g., 'yourname@gmail.com')
+EMAIL_HOST_PASSWORD = 'erkj texv ajmt pjht'  # ⚠️ REPLACE WITH GMAIL APP PASSWORD (not regular password!)
+# Get App Password from: https://myaccount.google.com/apppasswords
+# See GMAIL_APP_PASSWORD_GUIDE.md for step-by-step instructions
+DEFAULT_FROM_EMAIL = 'fiazmallana599@gmail.com'  # YOUR EMAIL ADDRESS (same as EMAIL_HOST_USER)
+
+# Contact form recipient email (where you want to receive contact form messages)
+CONTACT_EMAIL = 'fiazmallana599@gmail.com'  # YOUR EMAIL ADDRESS (where contact form messages will be sent)

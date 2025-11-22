@@ -33,6 +33,7 @@ urlpatterns = [
     path('api/notification-types/', include('main.urls.notification_type')),
     path('api/notifications/', include('main.urls.notifications')),
     path('api/preferred-hospitals/', include('main.urls.preferred_hospital')),
+    path('api/contact/', include('main.urls.contact')),
         # Serve static files from frontend/assets
     re_path(r'^assets/(?P<path>.*)$', serve, {'document_root': str(settings.FRONTEND_DIR / 'assets')}),
     # Serve components directory

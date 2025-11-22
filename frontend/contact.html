@@ -333,6 +333,7 @@
       const firstName = document.getElementById('firstName').value.trim();
       const lastName = document.getElementById('lastName').value.trim();
       const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
       const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value.trim();
       
@@ -348,18 +349,47 @@
         return;
       }
       
-      // Simulate form submission
+      // Get submit button and update UI
       const submitBtn = document.querySelector('.contact__btn');
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Sending...</span><i class="fa fa-spinner fa-spin"></i>';
       submitBtn.disabled = true;
       
-      setTimeout(() => {
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        document.getElementById('contactForm').reset();
+      // Prepare form data
+      const formData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone || '',
+        subject: subject,
+        message: message
+      };
+      
+      // Send data to backend API
+      fetch('/api/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.message || 'Thank you for your message! We will get back to you within 24 hours.');
+          document.getElementById('contactForm').reset();
+        } else {
+          alert(data.message || 'There was an error sending your message. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please check your internet connection and try again.');
+      })
+      .finally(() => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-      }, 2000);
+      });
     });
   </script>
 

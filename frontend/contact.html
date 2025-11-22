@@ -454,24 +454,39 @@
     /* Privacy Checkbox Styles - Smaller and inline */
     .privacy-checkbox {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 0;
     }
     
     .privacy-checkbox .form-check-input {
-      width: 16px !important;
-      height: 16px !important;
-      margin-top: 0;
-      margin-right: 0;
+      width: 14px !important;
+      height: 14px !important;
+      min-width: 14px !important;
+      margin-top: 2px !important;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
       flex-shrink: 0;
       cursor: pointer;
+      border: 1.5px solid #6c757d;
+    }
+    
+    .privacy-checkbox .form-check-input:checked {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
     }
     
     .privacy-checkbox .form-check-label {
-      margin-left: 0;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
       cursor: pointer;
       line-height: 1.5;
       font-size: 14px;
+      user-select: none;
+    }
+    
+    .privacy-checkbox .form-check-label:hover {
+      color: #0d6efd;
     }
   </style>
 

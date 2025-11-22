@@ -255,8 +255,104 @@
   <script src="assets/js/script.js"></script>
   <script src="js/components.js"></script>
   
+  <!-- Modal Popup Notification System -->
+  <div id="popup-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+    <div id="popup-modal" style="background: white; border-radius: 12px; padding: 0; max-width: 450px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2); animation: popupFadeIn 0.3s ease-out; position: relative;">
+      <div id="popup-content" style="padding: 30px; text-align: center;">
+        <div id="popup-icon" style="font-size: 48px; margin-bottom: 20px;"></div>
+        <h4 id="popup-title" style="margin-bottom: 15px; font-size: 20px; font-weight: 600;"></h4>
+        <p id="popup-message" style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 25px;"></p>
+        <button id="popup-close-btn" style="background: #0d6efd; color: white; border: none; padding: 12px 30px; border-radius: 6px; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.3s;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes popupFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    #popup-overlay {
+      display: none;
+    }
+    
+    #popup-overlay.show {
+      display: flex !important;
+    }
+    
+    #popup-close-btn:hover {
+      background: #0b5ed7 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+    }
+  </style>
+  
   <!-- Donate Form Submission -->
   <script>
+    // Popup notification function
+    function showPopup(message, type = 'success') {
+      const overlay = document.getElementById('popup-overlay');
+      const icon = document.getElementById('popup-icon');
+      const title = document.getElementById('popup-title');
+      const messageEl = document.getElementById('popup-message');
+      const modal = document.getElementById('popup-modal');
+      const closeBtn = document.getElementById('popup-close-btn');
+      
+      // Set colors and icon based on type
+      if (type === 'success') {
+        icon.innerHTML = '<i class="fa fa-check-circle" style="color: #28a745;"></i>';
+        title.textContent = 'Success!';
+        title.style.color = '#28a745';
+        modal.style.borderTop = '4px solid #28a745';
+      } else {
+        icon.innerHTML = '<i class="fa fa-exclamation-circle" style="color: #dc3545;"></i>';
+        title.textContent = 'Error';
+        title.style.color = '#dc3545';
+        modal.style.borderTop = '4px solid #dc3545';
+      }
+      
+      messageEl.textContent = message;
+      
+      // Show popup
+      overlay.classList.add('show');
+      
+      // Close function
+      const closePopup = () => {
+        overlay.classList.remove('show');
+      };
+      
+      // Close on button click
+      closeBtn.onclick = closePopup;
+      
+      // Close on overlay click (outside modal)
+      overlay.onclick = (e) => {
+        if (e.target === overlay) {
+          closePopup();
+        }
+      };
+      
+      // Close on Escape key
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          closePopup();
+          document.removeEventListener('keydown', handleEscape);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+      
+      // Auto close after 5 seconds
+      setTimeout(closePopup, 5000);
+    }
+    
     document.getElementById('donateForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -270,14 +366,14 @@
       
       // Validation
       if (!bloodGroup || !firstName || !lastName || !email || !address || !caseDescription) {
-        alert('Please fill in all required fields.');
+        showPopup('Please fill in all required fields.', 'error');
         return;
       }
       
       // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+        showPopup('Please enter a valid email address.', 'error');
         return;
       }
       
@@ -308,19 +404,19 @@
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert(data.message || 'Thank you for your donation request! We will contact you soon.');
+          showPopup(data.message || 'Thank you for your donation request! We will contact you soon.', 'success');
           document.getElementById('donateForm').reset();
           // Reset blood group select
           if (typeof $ !== 'undefined' && $('.nice_select').length) {
             $('.nice_select').niceSelect('update');
           }
         } else {
-          alert(data.message || 'There was an error sending your donation request. Please try again.');
+          showPopup(data.message || 'There was an error sending your donation request. Please try again.', 'error');
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('There was an error sending your donation request. Please check your internet connection and try again.');
+        showPopup('There was an error sending your donation request. Please check your internet connection and try again.', 'error');
       })
       .finally(() => {
         submitBtn.innerHTML = originalText;

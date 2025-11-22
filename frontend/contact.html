@@ -67,17 +67,29 @@
   <section class="ptb-80 bg-light">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
           <div class="contact-info-card text-center p-4 h-100">
             <div class="icon-box mb-3">
               <i class="fa fa-phone-alt fa-2x text-primary"></i>
             </div>
             <h5 class="mb-2">Emergency Hotline</h5>
             <p class="mb-2 text-muted">24/7 Emergency Support</p>
-            <a href="tel:+923001234567" class="text-primary fw-bold">+923041769292</a>
+            <a href="tel:+923041769292" class="text-primary fw-bold">+923041769292</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
+          <div class="contact-info-card text-center p-4 h-100">
+            <div class="icon-box mb-3">
+              <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+            </div>
+            <h5 class="mb-2">WhatsApp</h5>
+            <p class="mb-2 text-muted">Chat with us on WhatsApp</p>
+            <a href="https://wa.me/923483476760" target="_blank" class="text-primary fw-bold d-inline-block mt-2" style="color: #25D366 !important;">
+              <i class="fab fa-whatsapp me-2"></i>+923483476760
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
           <div class="contact-info-card text-center p-4 h-100">
             <div class="icon-box mb-3">
               <i class="fas fa-location-dot fa-2x text-primary"></i>
@@ -90,7 +102,7 @@
             </address>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
           <div class="contact-info-card text-center p-4 h-100">
             <div class="icon-box mb-3">
               <i class="fas fa-clock fa-2x text-primary"></i>
@@ -243,10 +255,15 @@
                     <h4 class="mb-3 fw-bold text-uppercase emergency-text text-white">
                       <i class="fa fa-bell me-2"></i>Emergency Blood Need?
                     </h4>
-                    <p class="mb-3 fs-6 text-white fw-medium">For urgent blood requirements, call our emergency hotline immediately:</p>
-                    <a href="tel:+923001234567" class="emergency-phone text-white fw-bold fs-3 text-decoration-none d-block bg-warning bg-opacity-25 p-3 rounded-2 border border-warning">
-                      <i class="fa fa-phone me-2"></i>+923041769292
-                    </a>
+                    <p class="mb-3 fs-6 text-white fw-medium">For urgent blood requirements, contact us immediately:</p>
+                    <div class="d-flex flex-column gap-2">
+                      <a href="tel:+923041769292" class="emergency-phone text-white fw-bold fs-4 text-decoration-none d-block bg-warning bg-opacity-25 p-2 rounded-2 border border-warning text-center">
+                        <i class="fa fa-phone me-2"></i>+923041769292
+                      </a>
+                      <a href="https://wa.me/923483476760" target="_blank" class="emergency-phone text-white fw-bold fs-4 text-decoration-none d-block p-2 rounded-2 border border-success text-center" style="background: rgba(37, 211, 102, 0.3) !important; border-color: #25D366 !important;">
+                        <i class="fab fa-whatsapp me-2"></i>WhatsApp: +923483476760
+                      </a>
+                    </div>
                     <p class="mt-2 mb-0 small text-white fw-medium">
                       <i class="fa fa-clock me-1"></i>24/7 Emergency Response Available
                     </p>
@@ -324,8 +341,77 @@
   <script src="assets/js/script.js"></script>
   <script src="js/components.js"></script>
   
-  <!-- Contact Form Validation -->
+  <!-- Modal Popup Notification System -->
+  <div id="popup-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+    <div id="popup-modal" style="background: white; border-radius: 12px; padding: 0; max-width: 450px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2); animation: popupFadeIn 0.3s ease-out; position: relative;">
+      <div id="popup-content" style="padding: 30px; text-align: center;">
+        <div id="popup-icon" style="font-size: 48px; margin-bottom: 20px;"></div>
+        <h4 id="popup-title" style="margin-bottom: 15px; font-size: 20px; font-weight: 600;"></h4>
+        <p id="popup-message" style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 25px;"></p>
+        <button id="popup-close-btn" style="background: #0d6efd; color: white; border: none; padding: 12px 30px; border-radius: 6px; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.3s;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  
   <script>
+    // Popup notification function
+    function showPopup(message, type = 'success') {
+      const overlay = document.getElementById('popup-overlay');
+      const icon = document.getElementById('popup-icon');
+      const title = document.getElementById('popup-title');
+      const messageEl = document.getElementById('popup-message');
+      const modal = document.getElementById('popup-modal');
+      const closeBtn = document.getElementById('popup-close-btn');
+      
+      // Set colors and icon based on type
+      if (type === 'success') {
+        icon.innerHTML = '<i class="fa fa-check-circle" style="color: #28a745;"></i>';
+        title.textContent = 'Success!';
+        title.style.color = '#28a745';
+        modal.style.borderTop = '4px solid #28a745';
+      } else {
+        icon.innerHTML = '<i class="fa fa-exclamation-circle" style="color: #dc3545;"></i>';
+        title.textContent = 'Error';
+        title.style.color = '#dc3545';
+        modal.style.borderTop = '4px solid #dc3545';
+      }
+      
+      messageEl.textContent = message;
+      
+      // Show popup
+      overlay.classList.add('show');
+      
+      // Close function
+      const closePopup = () => {
+        overlay.classList.remove('show');
+      };
+      
+      // Close on button click
+      closeBtn.onclick = closePopup;
+      
+      // Close on overlay click (outside modal)
+      overlay.onclick = (e) => {
+        if (e.target === overlay) {
+          closePopup();
+        }
+      };
+      
+      // Close on Escape key
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          closePopup();
+          document.removeEventListener('keydown', handleEscape);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+      
+      // Auto close after 5 seconds
+      setTimeout(closePopup, 5000);
+    }
+    
+    // Contact Form Validation
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -338,14 +424,14 @@
       const message = document.getElementById('message').value.trim();
       
       if (!firstName || !lastName || !email || !subject || !message) {
-        alert('Please fill in all required fields.');
+        showPopup('Please fill in all required fields.', 'error');
         return;
       }
       
       // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+        showPopup('Please enter a valid email address.', 'error');
         return;
       }
       
@@ -376,15 +462,15 @@
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert(data.message || 'Thank you for your message! We will get back to you within 24 hours.');
+          showPopup(data.message || 'Thank you for your message! We will get back to you within 24 hours.', 'success');
           document.getElementById('contactForm').reset();
         } else {
-          alert(data.message || 'There was an error sending your message. Please try again.');
+          showPopup(data.message || 'There was an error sending your message. Please try again.', 'error');
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('There was an error sending your message. Please check your internet connection and try again.');
+        showPopup('There was an error sending your message. Please check your internet connection and try again.', 'error');
       })
       .finally(() => {
         submitBtn.innerHTML = originalText;
@@ -449,6 +535,32 @@
     @keyframes emergencyBg {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
+    }
+    
+    /* Popup Modal Styles */
+    @keyframes popupFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    #popup-overlay {
+      display: none;
+    }
+    
+    #popup-overlay.show {
+      display: flex !important;
+    }
+    
+    #popup-close-btn:hover {
+      background: #0b5ed7 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
     }
     
     /* Privacy Checkbox Styles - Smaller and inline */

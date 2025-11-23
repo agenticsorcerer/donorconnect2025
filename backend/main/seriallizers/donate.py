@@ -8,3 +8,6 @@ class DonateFormSerializer(serializers.Serializer):
     address = serializers.CharField(required=True, max_length=200)
     caseDescription = serializers.CharField(required=True, max_length=2000)
 
+
+
+

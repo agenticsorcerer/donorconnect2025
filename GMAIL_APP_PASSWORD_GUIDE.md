@@ -95,3 +95,6 @@ Use in settings.py: `EMAIL_HOST_PASSWORD = 'abcdefghijklmnop'`
 ✅ **You can revoke them**: Delete them anytime from your Google Account
 ✅ **Better than regular password**: More secure for applications
 
+
+
+

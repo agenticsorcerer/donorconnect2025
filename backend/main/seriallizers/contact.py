@@ -17,3 +17,6 @@ class ContactFormSerializer(serializers.Serializer):
     )
     message = serializers.CharField(required=True, max_length=2000)
 
+
+
+

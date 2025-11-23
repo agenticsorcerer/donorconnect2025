@@ -1102,6 +1102,35 @@
 
       <!--our news end -->
       
+      <!-- Doctor Chatbot Help Popup -->
+      <div id="chatbot-help-popup" class="chatbot-help-popup">
+        <div class="help-popup-content">
+          <div class="help-popup-header">
+            <div class="help-popup-avatar">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=60&h=60&fit=crop&crop=face" alt="Doctor" class="help-doctor-image" onerror="this.src='https://via.placeholder.com/60/dc3545/ffffff?text=Dr.'">
+              <div class="help-status-badge">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+            </div>
+            <button id="help-popup-close" class="help-popup-close">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <div class="help-popup-body">
+            <h4>Do you need any help?</h4>
+            <p>I'm Dr. Health Assistant, here to answer your questions about blood donation and health. Click below to chat with me!</p>
+          </div>
+          <div class="help-popup-footer">
+            <button id="help-popup-yes" class="help-popup-btn help-popup-btn-primary">
+              <i class="fa-solid fa-comments"></i> Yes, I need help
+            </button>
+            <button id="help-popup-no" class="help-popup-btn help-popup-btn-secondary">
+              Maybe later
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Doctor Chatbot -->
       <div id="doctor-chatbot">
         <!-- Chatbot Button -->
@@ -2039,6 +2068,168 @@
         }
       }
       
+      /* Help Popup Styles */
+      .chatbot-help-popup {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        z-index: 10000;
+        display: none;
+        animation: popupSlideIn 0.5s ease-out;
+      }
+      
+      .chatbot-help-popup.show {
+        display: block;
+      }
+      
+      @keyframes popupSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      
+      .help-popup-content {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        width: 320px;
+        overflow: hidden;
+        border: 2px solid #dc3545;
+      }
+      
+      .help-popup-header {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      
+      .help-popup-avatar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+      }
+      
+      .help-doctor-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        object-fit: cover;
+      }
+      
+      .help-status-badge {
+        position: absolute;
+        bottom: 0;
+        left: 38px;
+        width: 14px;
+        height: 14px;
+        background: #28a745;
+        border: 2px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .help-status-badge i {
+        font-size: 8px;
+        color: white;
+      }
+      
+      .help-popup-close {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+      
+      .help-popup-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+      
+      .help-popup-body {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .help-popup-body h4 {
+        color: #2c3e50;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .help-popup-body p {
+        color: #6c757d;
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+      }
+      
+      .help-popup-footer {
+        padding: 15px 20px;
+        background: #f8f9fa;
+        display: flex;
+        gap: 10px;
+        border-top: 1px solid #e9ecef;
+      }
+      
+      .help-popup-btn {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      
+      .help-popup-btn-primary {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        color: white;
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+      }
+      
+      .help-popup-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+      }
+      
+      .help-popup-btn-secondary {
+        background: white;
+        color: #6c757d;
+        border: 1px solid #e9ecef;
+      }
+      
+      .help-popup-btn-secondary:hover {
+        background: #f8f9fa;
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+      
       @media (max-width: 768px) {
         .chatbot-window {
           width: calc(100vw - 40px);
@@ -2051,6 +2242,16 @@
           width: 55px;
           height: 55px;
           font-size: 20px;
+        }
+        
+        .chatbot-help-popup {
+          bottom: 90px;
+          right: 10px;
+          left: 10px;
+        }
+        
+        .help-popup-content {
+          width: 100%;
         }
       }
     </style>

@@ -10,6 +10,136 @@
     const chatbotMessages = document.getElementById('chatbot-messages');
     const quickButtons = document.querySelectorAll('.quick-btn');
     
+    // Help popup elements
+    const helpPopup = document.getElementById('chatbot-help-popup');
+    const helpPopupClose = document.getElementById('help-popup-close');
+    const helpPopupYes = document.getElementById('help-popup-yes');
+    const helpPopupNo = document.getElementById('help-popup-no');
+    
+    // Create audio context for sound notification
+    let audioContext = null;
+    let notificationSound = null;
+    
+    // Function to play notification sound
+    function playNotificationSound() {
+      try {
+        // Create audio context if not exists
+        if (!audioContext) {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        // Create a pleasant notification sound (beep)
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        // Configure sound
+        oscillator.frequency.value = 800; // Higher pitch
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.3);
+        
+        // Play a second beep for a nice notification effect
+        setTimeout(() => {
+          const oscillator2 = audioContext.createOscillator();
+          const gainNode2 = audioContext.createGain();
+          
+          oscillator2.connect(gainNode2);
+          gainNode2.connect(audioContext.destination);
+          
+          oscillator2.frequency.value = 1000;
+          oscillator2.type = 'sine';
+          
+          gainNode2.gain.setValueAtTime(0.2, audioContext.currentTime);
+          gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+          
+          oscillator2.start(audioContext.currentTime);
+          oscillator2.stop(audioContext.currentTime + 0.2);
+        }, 150);
+      } catch (error) {
+        console.log('Sound notification not available:', error);
+      }
+    }
+    
+    // Function to show help popup
+    function showHelpPopup() {
+      // Check if user has already interacted with chatbot
+      const hasInteracted = localStorage.getItem('chatbot_interacted');
+      
+      // Don't show if user already interacted or popup was dismissed
+      if (hasInteracted === 'true') {
+        return;
+      }
+      
+      if (helpPopup) {
+        helpPopup.classList.add('show');
+        // Play notification sound
+        playNotificationSound();
+        
+        // Add vibration if supported (mobile)
+        if (navigator.vibrate) {
+          navigator.vibrate([200, 100, 200]);
+        }
+      }
+    }
+    
+    // Function to hide help popup
+    function hideHelpPopup() {
+      if (helpPopup) {
+        helpPopup.classList.remove('show');
+      }
+    }
+    
+    // Show popup after 3 seconds of page load
+    setTimeout(() => {
+      showHelpPopup();
+    }, 3000);
+    
+    // Close popup handlers
+    if (helpPopupClose) {
+      helpPopupClose.addEventListener('click', function() {
+        hideHelpPopup();
+        localStorage.setItem('chatbot_interacted', 'true');
+      });
+    }
+    
+    // Yes button - open chatbot
+    if (helpPopupYes) {
+      helpPopupYes.addEventListener('click', function() {
+        hideHelpPopup();
+        localStorage.setItem('chatbot_interacted', 'true');
+        // Open chatbot window
+        if (chatbotWindow) {
+          chatbotWindow.classList.add('active');
+          if (chatbotInput) {
+            chatbotInput.focus();
+          }
+        }
+      });
+    }
+    
+    // No button - just close
+    if (helpPopupNo) {
+      helpPopupNo.addEventListener('click', function() {
+        hideHelpPopup();
+        localStorage.setItem('chatbot_interacted', 'true');
+      });
+    }
+    
+    // Mark as interacted when user opens chatbot manually
+    if (chatbotButton) {
+      chatbotButton.addEventListener('click', function() {
+        localStorage.setItem('chatbot_interacted', 'true');
+        hideHelpPopup(); // Hide popup if open
+      });
+    }
+    
     // Medical knowledge base for doctor responses
     const medicalKnowledge = {
       'donate': {

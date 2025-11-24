@@ -45,100 +45,37 @@
    <!-- header placeholder -->
   <div id="header-placeholder"></div>
    
-  <!-- breadcrumb start -->
-  <div class="breadcrumb_section overflow-hidden ptb-150">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12 text-center">
-          <h2>Campaign</h2>
-          <ul>
-            <li><a href=" #">Home</a></li>
-            <li><a href="campaign-details.html">Campaign</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- Hero Section with Campaign Image -->
+  <section class="campaign-hero-section" style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
+    <div class="campaign-hero-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/compain.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="campaign-hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), linear-gradient(to bottom, transparent 60%, rgba(220,53,69,0.85) 100%);"></div>
     </div>
-  </div>
-  <!-- breadcrumb end -->
-
-  <!-- Campaign Hero Section -->
-  <section class="campaign-hero-section" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #b91c3c 100%); position: relative; overflow: hidden;">
-    <!-- Background Pattern -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.3;"></div>
-    
-    <!-- Floating Elements -->
-    <div style="position: absolute; top: 10%; right: 10%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
-    <div style="position: absolute; bottom: 20%; left: 5%; width: 60px; height: 60px; background: rgba(255,255,255,0.08); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
-    
-    <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center min-vh-75">
-        <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-5 mb-lg-0">
-          <div class="pe-lg-5">
-            <!-- Professional Badge -->
-            <div class="mb-4">
-              <span class="professional-badge" style="display: inline-block; background: rgba(255,255,255,0.15); color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                <i class="fa-solid fa-heart me-2"></i>AIMS Layyah Project
-              </span>
-            </div>
-            
-            <!-- Main Heading -->
-            <h1 class="hero-title mb-4" style="font-size: 3.5rem; font-weight: 800; color: white; line-height: 1.1; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-              Blood Donation 
-              <span class="gradient-text" style="background: linear-gradient(45deg, #ffc107, #ffeb3b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Campaigns</span>
+    <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center;">
+      <div class="row justify-content-center w-100">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-12 text-center">
+          <div class="campaign-hero-content">
+            <h1 class="campaign-hero-title" style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 1.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+              Campaign
             </h1>
-            
-            <!-- Subtitle -->
-            <p class="hero-subtitle mb-5" style="font-size: 1.3rem; color: rgba(255,255,255,0.95); line-height: 1.7; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-              Join our community-driven blood donation campaigns and make a real difference in saving lives across <strong>Layyah</strong> and surrounding areas.
+            <p class="campaign-hero-subtitle" style="font-size: 1.25rem; color: rgba(255,255,255,0.95); margin-bottom: 2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">
+              Join our community-driven blood donation campaigns and make a real difference in saving lives
             </p>
-            
-            <!-- Professional Stats -->
-            <div class="hero-stats mb-5" style="display: flex; gap: 2rem; flex-wrap: wrap;">
-              <div class="stat-item" style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">25+</div>
-                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Campaigns</div>
-              </div>
-              <div class="stat-item" style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">1500+</div>
-                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Donors</div>
-              </div>
-              <div class="stat-item" style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">9000+</div>
-                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Lives Saved</div>
-              </div>
-            </div>
-            
-            <!-- Professional CTA Button -->
-            <div class="hero-cta" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-              <a href="#upcoming-campaigns" class="primary-cta-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 18px 35px; background: white; color: #dc3545; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 2px solid white;">
-                <i class="fa-solid fa-calendar-check"></i>
-                View Campaigns
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-          <div class="hero-image-container" style="position: relative; text-align: center;">
-            <!-- Main Image -->
-            <div class="hero-image-wrapper" style="position: relative; display: inline-block;">
-              <img src="assets/images/campaigns/campaign gallery1.png" alt="Blood Donation Campaign" class="hero-main-image" style="max-width: 100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); transform: perspective(1000px) rotateY(-5deg); transition: all 0.3s ease;" />
-              
-              <!-- Floating Elements Around Image -->
-              <div class="floating-icon" style="position: absolute; top: -20px; left: -20px; width: 60px; height: 60px; background: linear-gradient(45deg, #ffc107, #ffeb3b); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: pulse 2s infinite;">
-                <i class="fa-solid fa-heart" style="color: white; font-size: 1.5rem;"></i>
-              </div>
-              <div class="floating-icon" style="position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; background: linear-gradient(45deg, #28a745, #20c997); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: pulse 2s infinite 1s;">
-                <i class="fa-solid fa-users" style="color: white; font-size: 1.2rem;"></i>
-              </div>
-            </div>
-            
-            <!-- Background Decoration -->
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; z-index: -1;"></div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 25px; padding: 10px 20px; display: inline-flex; margin: 0;">
+                <li class="breadcrumb-item">
+                  <a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: rgba(255,255,255,0.9);">
+                  Campaign
+                </li>
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Hero Section End -->
 
   <!-- Campaign Statistics -->
   <section class="ptb-80" style="background: #f8f9fa;">
@@ -787,6 +724,39 @@
       });
     });
   </script>
+
+  <style>
+    /* Campaign Hero Section Responsive Styles */
+    @media (max-width: 768px) {
+      .campaign-hero-section {
+        height: 400px !important;
+      }
+      .campaign-hero-title {
+        font-size: 2rem !important;
+      }
+      .campaign-hero-subtitle {
+        font-size: 1rem !important;
+      }
+      .breadcrumb {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .campaign-hero-section {
+        height: 350px !important;
+      }
+      .campaign-hero-title {
+        font-size: 1.75rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .campaign-hero-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+    }
+  </style>
 </body>
 
 </html>

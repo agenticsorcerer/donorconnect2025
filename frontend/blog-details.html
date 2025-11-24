@@ -46,21 +46,37 @@
   <!-- header placeholder -->
   <div id="header-placeholder"></div>
 
-  <!-- breadcrumb start -->
-  <div class="breadcrumb_section overflow-hidden ptb-150">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12 text-center">
-          <h2>Blogs</h2>
-          <ul>
-            <li><a href=" #">Home</a></li>
-            <li class="active">Blogs</li>
-          </ul>
+  <!-- Hero Section with Blog Image -->
+  <section class="blog-hero-section" style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
+    <div class="blog-hero-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/blof.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="blog-hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), linear-gradient(to bottom, transparent 60%, rgba(220,53,69,0.85) 100%);"></div>
+    </div>
+    <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center;">
+      <div class="row justify-content-center w-100">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-12 text-center">
+          <div class="blog-hero-content">
+            <h1 class="blog-hero-title" style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 1.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+              Blogs
+            </h1>
+            <p class="blog-hero-subtitle" style="font-size: 1.25rem; color: rgba(255,255,255,0.95); margin-bottom: 2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">
+              Inspiring stories of hope, courage, and the life-changing power of blood donation
+            </p>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 25px; padding: 10px 20px; display: inline-flex; margin: 0;">
+                <li class="breadcrumb-item">
+                  <a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: rgba(255,255,255,0.9);">
+                  Blogs
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- breadcrumb end -->
+  </section>
+  <!-- Hero Section End -->
 
   <!-- section blog details start -->
   <section class="km__blog__details ptb-120">
@@ -258,6 +274,39 @@
   <script src="assets/js/waypoints.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="js/components.js"></script>
+
+  <style>
+    /* Blog Hero Section Responsive Styles */
+    @media (max-width: 768px) {
+      .blog-hero-section {
+        height: 400px !important;
+      }
+      .blog-hero-title {
+        font-size: 2rem !important;
+      }
+      .blog-hero-subtitle {
+        font-size: 1rem !important;
+      }
+      .breadcrumb {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .blog-hero-section {
+        height: 350px !important;
+      }
+      .blog-hero-title {
+        font-size: 1.75rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .blog-hero-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+    }
+  </style>
 </body>
 
 </html>
